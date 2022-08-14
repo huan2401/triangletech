@@ -42,11 +42,15 @@ export const BannerWrapper = styled.div`
 
     & > div.banner-content-msg {
       margin-top: 216px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       & > p {
         color: #fff;
         font-size: 36px;
         font-weight: bold;
         text-align: center;
+        width: 70%;
 
         & > span {
           display: inline-block;
@@ -65,6 +69,7 @@ export const BannerWrapper = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 30px;
 
       & > p {
         color: #fff;

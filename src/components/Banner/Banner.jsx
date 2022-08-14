@@ -26,8 +26,8 @@ const Banner = ({ showNav }) => {
         </div>
         <div className="banner-content-msg">
           <p>
-            JOIN <span>60,000+ RETAILERS</span> WHO TRUST TELIO TO SOURCE
-            EVERYDAY
+            {t("join")} <span>60,000+ {t("retailers")}</span> 
+            {t("who trust telio source everyday")}
           </p>
         </div>
         <div className="banner-content-link">

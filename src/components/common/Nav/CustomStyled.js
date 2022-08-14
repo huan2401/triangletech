@@ -20,7 +20,7 @@ export const NavWrapper = styled.div`
     width: 100%;
     right: 60px;
     width: calc(100% - 120px);
-    overflow: hidden;
+    box-shadow: 0 20px 20px rgb(103 128 155 / 20%);
   `};
 
   & > div.nav-left {

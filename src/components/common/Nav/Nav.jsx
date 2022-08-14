@@ -5,6 +5,7 @@ import { NavWrapper } from "./CustomStyled";
 import { Divider } from "antd";
 import ZaloImg from "assets/images/zalo.png";
 import DownloadImg from "assets/images/download.png";
+import { t } from "i18next";
 
 const Nav = ({ collapse }) => {
   console.log("collapse", collapse);
@@ -13,7 +14,7 @@ const Nav = ({ collapse }) => {
       <div className="nav-left">
         <p>Triangletech</p>
         <div>
-          <Link to="/">WE ARE HIRING</Link>
+          <Link to="/">{t("we are hiring")}</Link>
           <Link to="/">BLOG</Link>
         </div>
       </div>
