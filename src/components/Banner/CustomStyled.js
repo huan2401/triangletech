@@ -61,11 +61,17 @@ export const BannerWrapper = styled.div`
 
     & > div.banner-content-link {
       margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
       & > p {
         color: #fff;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
+        margin-bottom: 20px;
       }
     }
   }

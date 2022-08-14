@@ -21,11 +21,11 @@ export const HomeWrapper = styled.div`
     top: 0;
     width: 100%;
     height: 100vh;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 
     .home-content-info-product {
       width: 100%;
-      height: 300px;
+      height: 1000px;
       background-color: #fff;
     }
   }

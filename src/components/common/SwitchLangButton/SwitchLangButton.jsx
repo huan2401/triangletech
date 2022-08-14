@@ -6,7 +6,7 @@ import { getCurrentLanguage, changeLanguage } from "utils/i18n";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 
-const SwitchLangButton = () => {
+const SwitchLangButton = ({ style }) => {
   const [showSwitchLang, setShowSwitchLang] = useState(false);
   const { t } = useTranslation();
   const [lang, setLang] = useState("vi");
@@ -26,7 +26,7 @@ const SwitchLangButton = () => {
           <img src={lang === "vi" ? VNLogo : ENLogo} alt="#" />
         </div>
         {showSwitchLang && (
-          <div className="switch-lang-option">
+          <div className="switch-lang-option" style={style ? style : {}}>
             <div
               className="switch-lang-option-en"
               onClick={() => {

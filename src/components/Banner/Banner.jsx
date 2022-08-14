@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dropdown, Menu, Space } from "antd";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import SwitchLangButton from "components/common/SwitchLangButton/SwitchLangButton";
 import { BannerWrapper } from "./CustomStyled";
 import Nav from "components/common/Nav/Nav";
+import { t } from "i18next";
 
-const Banner = () => {
+const Banner = ({ showNav }) => {
   return (
     <BannerWrapper>
       {/* <div className="banner-background">
@@ -30,8 +31,8 @@ const Banner = () => {
           </p>
         </div>
         <div className="banner-content-link">
-          <p>Exciting offers on</p>
-          <Nav/>
+          <p>{t("Exciting offers on")}</p>
+          <Nav collapse={showNav} />
         </div>
       </div>
     </BannerWrapper>
