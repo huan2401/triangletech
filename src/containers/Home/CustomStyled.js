@@ -105,5 +105,99 @@ export const HomeWrapper = styled.div`
         }
       }
     }
+
+    .section-3 {
+      background-color: #dbf0ff;
+    }
+    .section-4 {
+    }
+    .section-5 {
+      padding: 150px 60px 60px 60px;
+
+      &-title {
+        color: #0795ff;
+        font-size: 26px;
+        letter-spacing: 4px;
+        line-height: 28px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      &-list {
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3%;
+        padding: 0 200px;
+
+        &-item {
+          width: 30%;
+          border: 2px solid #ffc52e;
+          border-radius: 16px;
+          box-shadow: 0 2px 2px 1px rgb(0 0 0 / 10%),
+            0 10px 20px rgb(0 0 0 / 10%);
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          padding: 24px;
+
+          & > div:first-child {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            & > img {
+              width: 110px;
+              height: 110px;
+              border-radius: 50%;
+            }
+
+            & > p {
+              display: flex;
+              flex-direction: column;
+
+              & > span:first-child {
+                color: #465059;
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: 2.4px;
+                text-transform: uppercase;
+              }
+
+              & > span:last-child {
+                color: #646b72;
+                font-size: 16px;
+                letter-spacing: 1px;
+              }
+            }
+          }
+
+          & > div:last-child {
+            margin-top: 20px;
+  
+            & > p {
+              color: #465059;
+              font-size: 16px;
+              letter-spacing: 1px;
+              min-height: 90px;
+            }
+            & > img:first-child {
+              width: 18px;
+              height: 14px;
+              margin-bottom: 20px;
+            }
+            & > img:last-child {
+              width: 18px;
+              height: 14px;
+              margin-left: 100%;
+              transform: translateX(-100%) rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+    .section-6 {
+    }
   }
 `;

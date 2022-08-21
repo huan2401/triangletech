@@ -6,6 +6,7 @@ import AuthLayout from "components/Layout/AuthLayout/AuthLayout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "containers/Home/Home";
 import NotFound from "containers/NotFound/NotFound";
+import Footer from "components/Layout/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,17 +18,20 @@ function App() {
   //   }
   // }, [isLogin]);
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          // <AuthLayout isAllowed={isLogin}>
-          <Home />
-          // </AuthLayout>
-        }
-      />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            // <AuthLayout isAllowed={isLogin}>
+            <Home />
+            // </AuthLayout>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {/* <Footer /> */}
+    </>
   );
 }
 

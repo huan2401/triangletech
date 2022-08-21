@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { HomeWrapper } from "./CustomStyled";
-import { Button } from "antd";
+import { Button, Divider } from "antd";
 import Banner from "components/Banner/Banner";
 import BannerBg from "assets/images/banner-bg.jpg";
 import Item1 from "assets/images/item1.svg";
 import Item2 from "assets/images/item2.svg";
 import Item3 from "assets/images/item3.svg";
 import FMCGLogos from "assets/images/FMCG-Logos.webp";
+import Section3IMG from "assets/images/section-3-img.png";
+import S5ImgItem from "assets/images/section5-img-item.jpg";
+import DauNhay from "assets/images/dau-nhay-trai.png";
+import Footer from "components/Layout/Footer/Footer";
 
 const Home = () => {
   const [toggleShowNav, setToggleShowNav] = useState(false);
@@ -85,6 +89,91 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <section className="section-3">
+          <div>
+            <p>THOUSANDS OF VERIFIED PRODUCTS</p>
+          </div>
+          <div>
+            <div>
+              <p>1500</p>
+              <p>FMCG SUKs</p>
+            </div>
+            <Divider type="vertical" />
+            <div>
+              <p>1500</p>
+              <p>FMCG SUKs</p>
+            </div>
+            <Divider type="vertical" />
+            <div>
+              <p>1500</p>
+              <p>FMCG SUKs</p>
+            </div>
+          </div>
+          <div>
+            <img src={Section3IMG} alt="" />
+          </div>
+        </section>
+        <section className="section-4"></section>
+        <section className="section-5">
+          <p className="section-5-title">WHY OUR RETAILERS LOVE US</p>
+          <div className="section-5-list">
+            <div className="section-5-list-item">
+              <div>
+                <img src={S5ImgItem} alt="" />
+                <p>
+                  <span>MRS HONG</span>
+                  <span>Mieu Mon, HN</span>
+                </p>
+              </div>
+              <div>
+                <img src={DauNhay} alt="" />
+                <p>
+                  Best thing about Telio is that the prices and promotions are
+                  transparent to all retailers. I can order anywhere anytime via
+                  the Telio Zalo Store
+                </p>
+                <img src={DauNhay} alt="" />
+              </div>
+            </div>
+            <div className="section-5-list-item">
+              <div>
+                <img src={S5ImgItem} alt="" />
+                <p>
+                  <span>MRS HONG</span>
+                  <span>Mieu Mon, HN</span>
+                </p>
+              </div>
+              <div>
+                <img src={DauNhay} alt="" />
+                <p>
+                  Best thing about Telio is that the prices and promotions are
+                  transparent to all retailers. I can order anywhere anytime via
+                  the Telio Zalo Store
+                </p>
+                <img src={DauNhay} alt="" />
+              </div>
+            </div>
+            <div className="section-5-list-item">
+              <div>
+                <img src={S5ImgItem} alt="" />
+                <p>
+                  <span>MRS HONG</span>
+                  <span>Mieu Mon, HN</span>
+                </p>
+              </div>
+              <div>
+                <img src={DauNhay} alt="" />
+                <p>
+                  Best thing about Telio is that the prices and promotions are
+                  transparent to all retailers. I can order anywhere anytime via
+                  the Telio Zalo Store
+                </p>
+                <img src={DauNhay} alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <Footer/>
       </div>
     </HomeWrapper>
   );

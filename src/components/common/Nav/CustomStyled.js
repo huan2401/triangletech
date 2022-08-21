@@ -16,6 +16,7 @@ export const NavWrapper = styled.div`
     props.collapse &&
     `
     position: fixed;
+    z-index: 1000;
     top: 20px;
     width: 100%;
     right: 60px;
