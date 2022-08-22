@@ -12,10 +12,10 @@ const Nav = ({ collapse }) => {
   return (
     <NavWrapper collapse={collapse}>
       <div className="nav-left">
-        <p>Triangletech</p>
+        <Link to="/">Triangletech</Link>
         <div>
-          <Link to="/">{t("we are hiring")}</Link>
-          <Link to="/">BLOG</Link>
+          <Link to="/hiring">{t("we are hiring")}</Link>
+          <Link to="/blog">BLOG</Link>
         </div>
       </div>
       <div className="nav-right">

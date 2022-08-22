@@ -7,6 +7,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "containers/Home/Home";
 import NotFound from "containers/NotFound/NotFound";
 import Footer from "components/Layout/Footer/Footer";
+import Blog from "containers/Blog/Blog";
+import Hiring from "containers/Hiring/Hiring";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +30,8 @@ function App() {
             // </AuthLayout>
           }
         />
+        <Route path="blog" element={<Blog />} />
+        <Route path="hiring" element={<Hiring />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <Footer /> */}

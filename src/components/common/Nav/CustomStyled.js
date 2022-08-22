@@ -29,7 +29,7 @@ export const NavWrapper = styled.div`
     align-items: center;
     gap: 20px;
 
-    & > p {
+    & > a {
       margin: 0;
       font-size: 24px;
       color: #ff8a00;
