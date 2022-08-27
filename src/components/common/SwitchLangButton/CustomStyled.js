@@ -19,8 +19,12 @@ export const SwitchLangButtonWrapper = styled.div`
       border-radius: 16px;
       background-color: #fff;
       position: absolute;
-      left: -145%;
-      width: 140px;
+      left: -166%;
+      /* width: 140px; */
+
+      @media only screen and (max-width: 576px) {
+        left: -318%;
+      }
       &-en {
         display: flex;
         align-items: center;
@@ -28,6 +32,7 @@ export const SwitchLangButtonWrapper = styled.div`
         cursor: pointer;
         & > p {
           margin: 0;
+          white-space: nowrap;
         }
         & > div {
           width: 36px;
@@ -36,6 +41,7 @@ export const SwitchLangButtonWrapper = styled.div`
           & > img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
           }
         }
       }
@@ -47,6 +53,7 @@ export const SwitchLangButtonWrapper = styled.div`
         cursor: pointer;
         & > p {
           margin: 0;
+          white-space: nowrap;
         }
         & > div {
           width: 36px;
@@ -55,6 +62,7 @@ export const SwitchLangButtonWrapper = styled.div`
           & > img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
           }
         }
       }

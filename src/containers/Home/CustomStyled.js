@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HomeWrapper = styled.div`
   position: relative;
   width: 100%;
-  & > div.home-background {
+  /* & > div.home-background {
     position: absolute;
     z-index: 0;
     width: 100%;
@@ -14,7 +14,7 @@ export const HomeWrapper = styled.div`
       height: 100%;
       object-fit: cover;
     }
-  }
+  } */
   & > div.home-content {
     position: absolute;
     z-index: 1;
@@ -160,6 +160,42 @@ export const HomeWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
+      z-index: 0;
+
+      div.section-4-left-button {
+        position: absolute;
+        z-index: 2;
+        bottom: 80px;
+
+        align-items: center;
+        background: #fff;
+        border-radius: 200px;
+        /* box-shadow: 0 10px 40px rgb(103 128 155 / 40%); */
+        display: inline-flex;
+        gap: 10px;
+        justify-content: center;
+        /* margin: 3rem 6rem 12rem 9.5rem; */
+        padding: 1rem;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+
+        & > p {
+          color: #286af6;
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: 0.8px;
+          line-height: 150%;
+          white-space: nowrap;
+        }
+
+        & > img {
+          width: 25px;
+          height: 25px;
+          object-fit: cover;
+        }
+      }
 
       &-left {
         /* width: 50%; */
@@ -168,6 +204,7 @@ export const HomeWrapper = styled.div`
         overflow-y: auto;
         overflow: -moz-scrollbars-none;
         -ms-overflow-style: none;
+        position: relative;
 
         &::-webkit-scrollbar {
           width: 0 !important;
@@ -202,6 +239,7 @@ export const HomeWrapper = styled.div`
         width: 50%;
         height: 520px;
         position: relative;
+        z-index: 0;
         & > img:first-child {
           width: 297px;
           height: 100%;
@@ -294,12 +332,14 @@ export const HomeWrapper = styled.div`
                 font-weight: 700;
                 letter-spacing: 2.4px;
                 text-transform: uppercase;
+                white-space: nowrap;
               }
 
               & > span:last-child {
                 color: #646b72;
                 font-size: 16px;
                 letter-spacing: 1px;
+                white-space: nowrap;
               }
             }
           }

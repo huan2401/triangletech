@@ -5,16 +5,19 @@ import SwitchLangButton from "components/common/SwitchLangButton/SwitchLangButto
 import { BannerWrapper } from "./CustomStyled";
 import Nav from "components/common/Nav/Nav";
 import { t } from "i18next";
+import { useBreakpoints } from "hooks/useBreakpoint";
 
 const Banner = ({ showNav }) => {
+  const { isMobile } = useBreakpoints();
+
   return (
     <BannerWrapper>
-      {/* <div className="banner-background">
+      <div className="banner-background">
         <img
           src="https://www.telio.vn/static/HeroBanner-321b6dc882edb6a5e993650c83b0d271.jpg"
           alt="banner-background"
         />
-      </div> */}
+      </div>
       <div className="banner-content">
         <div className="banner-content-header">
           <div className="banner-content-header-logo">
@@ -26,12 +29,15 @@ const Banner = ({ showNav }) => {
         </div>
         <div className="banner-content-msg">
           <p>
-            {t("join")} <span>60,000+ {t("retailers")}</span> 
+            {t("join")}
+            {isMobile && <br />}
+            <span>60,000+ {t("retailers")}</span>
+            {isMobile && <br />}
             {t("who trust telio source everyday")}
           </p>
         </div>
         <div className="banner-content-link">
-          <p>{t("Exciting offers on")}</p>
+          {!isMobile && <p>{t("Exciting offers on")}</p>}
           <Nav collapse={showNav} />
         </div>
       </div>

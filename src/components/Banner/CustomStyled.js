@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const BannerWrapper = styled.div`
-  /* position: relative; */
+  position: relative;
   width: 100%;
   height: 100vh;
 
-  /* & > div.banner-background {
+  @media only screen and (max-width: 576px) {
+    height: 70vh;
+  }
+
+  & > div.banner-background {
     position: absolute;
     z-index: 0;
     width: 100%;
@@ -15,13 +19,17 @@ export const BannerWrapper = styled.div`
       height: 100%;
       object-fit: cover;
     }
-  } */
+  }
   & > div.banner-content {
-    /* position: absolute;
-    z-index: 1; */
+    position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
     padding: 30px 60px 0 60px;
+
+    @media only screen and (max-width: 576px) {
+      padding: 10px 30px 0 30px;
+    }
 
     & > div.banner-content-header {
       width: 100%;
@@ -52,6 +60,10 @@ export const BannerWrapper = styled.div`
         text-align: center;
         width: 70%;
 
+        @media only screen and (max-width: 576px) {
+          font-size: 20px;
+        }
+
         & > span {
           display: inline-block;
           background-color: #fff;
@@ -70,6 +82,10 @@ export const BannerWrapper = styled.div`
       justify-content: center;
       align-items: center;
       gap: 30px;
+
+      @media only screen and (max-width: 576px) {
+        margin-top: 15px;
+      }
 
       & > p {
         color: #fff;

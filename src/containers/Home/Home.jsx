@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HomeWrapper } from "./CustomStyled";
-import { Button, Carousel, Divider } from "antd";
+import { Button, Carousel, Divider, Grid } from "antd";
 import Banner from "components/Banner/Banner";
 import BannerBg from "assets/images/banner-bg.jpg";
 import Item1 from "assets/images/item1.svg";
@@ -15,11 +15,15 @@ import PhoneImg from "assets/images/phone.png";
 import PhoneBgImg from "assets/images/phone-bg.png";
 import Slide1Img from "assets/images/value3.webp";
 import Footer from "components/Layout/Footer/Footer";
-import gsap from "gsap";
+import ZaloImg from "assets/images/zalo.png";
+import { useBreakpoints } from "hooks/useBreakpoint";
 
 const Home = () => {
   const [toggleShowNav, setToggleShowNav] = useState(false);
   const [slide, setSlide] = useState(0);
+  const { isMobile } = useBreakpoints();
+
+  // console.log("useBreakpoint", isMobile);
 
   const carouselRef = React.createRef();
 
@@ -38,6 +42,14 @@ const Home = () => {
   };
 
   console.log("slide", slide);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   useEffect(() => {
     carouselRef.current.goTo(slide, false);
@@ -68,7 +80,7 @@ const Home = () => {
       },
       true
     );
-  }, []);
+  }, [slide]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, true);
@@ -78,9 +90,9 @@ const Home = () => {
   }, []);
   return (
     <HomeWrapper>
-      <div className="home-background">
+      {/* <div className="home-background">
         <img src={BannerBg} alt="banner-background" />
-      </div>
+      </div> */}
       <div className="home-content" id="home-content">
         <Banner showNav={toggleShowNav} />
         <div className="home-content-info-product">
@@ -165,57 +177,65 @@ const Home = () => {
             <img src={Section3IMG} alt="" />
           </div>
         </section>
-        <section className="section-4">
-          <div className="section-4-left">
-            <div className="section-4-left-item">
-              <img src={BestOfferImg} alt="" />
-              <div>
-                <p>EXCLUSIVE OFFERS</p>
-                <p>
-                  By partnering with brands, we ensure the best deals for our
-                  retailers.
-                </p>
+        <div>
+          {/* {document.querySelectorAll(".section-4")[0].getBoundingClientRect()
+            .top <= 0} */}
+          <section className="section-4">
+            <div className="section-4-left-button">
+              <img src={ZaloImg} alt="" />
+              <p>Buy on Zalo</p>
+            </div>
+            <div className="section-4-left">
+              <div className="section-4-left-item">
+                <img src={BestOfferImg} alt="" />
+                <div>
+                  <p>EXCLUSIVE OFFERS</p>
+                  <p>
+                    By partnering with brands, we ensure the best deals for our
+                    retailers.
+                  </p>
+                </div>
+              </div>
+              <div className="section-4-left-item">
+                <img src={BestOfferImg} alt="" />
+                <div>
+                  <p>EXCLUSIVE OFFERS</p>
+                  <p>
+                    By partnering with brands, we ensure the best deals for our
+                    retailers.
+                  </p>
+                </div>
+              </div>
+              <div className="section-4-left-item">
+                <img src={BestOfferImg} alt="" />
+                <div>
+                  <p>EXCLUSIVE OFFERS</p>
+                  <p>
+                    By partnering with brands, we ensure the best deals for our
+                    retailers.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="section-4-left-item">
-              <img src={BestOfferImg} alt="" />
+            <div className="section-4-right">
+              <img src={PhoneImg} alt="" />
+              <img src={PhoneBgImg} alt="" />
               <div>
-                <p>EXCLUSIVE OFFERS</p>
-                <p>
-                  By partnering with brands, we ensure the best deals for our
-                  retailers.
-                </p>
+                <Carousel afterChange={onChange} ref={carouselRef} dots={false}>
+                  <div>
+                    <img src={Slide1Img} alt="" />
+                  </div>
+                  <div>
+                    <img src={Slide1Img} alt="" />
+                  </div>
+                  <div>
+                    <img src={Slide1Img} alt="" />
+                  </div>
+                </Carousel>
               </div>
             </div>
-            <div className="section-4-left-item">
-              <img src={BestOfferImg} alt="" />
-              <div>
-                <p>EXCLUSIVE OFFERS</p>
-                <p>
-                  By partnering with brands, we ensure the best deals for our
-                  retailers.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="section-4-right">
-            <img src={PhoneImg} alt="" />
-            <img src={PhoneBgImg} alt="" />
-            <div>
-              <Carousel afterChange={onChange} ref={carouselRef} dots={false}>
-                <div>
-                  <img src={Slide1Img} alt="" />
-                </div>
-                <div>
-                  <img src={Slide1Img} alt="" />
-                </div>
-                <div>
-                  <img src={Slide1Img} alt="" />
-                </div>
-              </Carousel>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
         <section className="section-5">
           <p className="section-5-title">WHY OUR RETAILERS LOVE US</p>
           <div className="section-5-list">
