@@ -29,6 +29,10 @@ export const HomeWrapper = styled.div`
       background-color: #fff;
       padding: 100px 60px 60px 60px;
 
+      @media only screen and (max-width: 576px) {
+        padding: 100px 30px 30px 30px;
+      }
+
       .info-product-title {
         color: #0795ff;
         font-size: 26px;
@@ -45,6 +49,14 @@ export const HomeWrapper = styled.div`
           justify-content: center;
           padding: 0 200px;
           gap: 20px;
+
+          @media only screen and (max-width: 576px) {
+            width: 100%;
+            flex-wrap: wrap;
+            padding: 0;
+            gap: 52px;
+          }
+
           .info-product-item {
             align-items: center;
             background: #fff;
@@ -56,6 +68,11 @@ export const HomeWrapper = styled.div`
             padding: 16px;
             padding-bottom: 20px;
             position: relative;
+            gap: 10px;
+
+            @media only screen and (max-width: 576px) {
+              /* width: 100%; */
+            }
 
             & > div:first-child {
               min-height: 100px;
@@ -109,6 +126,10 @@ export const HomeWrapper = styled.div`
     .section-3 {
       background-color: #dbf0ff;
       padding: 60px;
+
+      @media only screen and (max-width: 576px) {
+        padding: 70px 20px 20px 20px;
+      }
       & > div:first-child {
         & > p {
           font-size: 26px;
@@ -125,6 +146,21 @@ export const HomeWrapper = styled.div`
         justify-content: center;
         margin-top: 20px;
         gap: 10px;
+
+        @media only screen and (max-width: 576px) {
+          flex-direction: column;
+          padding: 0 30%;
+
+          .ant-divider {
+            border-top: 2px solid #0795ff;
+          }
+
+          .ant-divider-horizontal {
+            margin: 9px 0;
+            width: 80%;
+            min-width: 50%;
+          }
+        }
         & > div {
           & > p:first-child {
             font-size: 18px;
@@ -133,6 +169,9 @@ export const HomeWrapper = styled.div`
             letter-spacing: 4px;
             text-align: center;
             text-transform: uppercase;
+            @media only screen and (max-width: 576px) {
+              font-size: 22px;
+            }
           }
           & > p:last-child {
             font-size: 6px;
@@ -141,6 +180,9 @@ export const HomeWrapper = styled.div`
             letter-spacing: 4px;
             text-align: center;
             text-transform: uppercase;
+            @media only screen and (max-width: 576px) {
+              font-size: 8px;
+            }
           }
         }
       }
@@ -283,6 +325,10 @@ export const HomeWrapper = styled.div`
     .section-5 {
       padding: 150px 60px 60px 60px;
 
+      @media only screen and (max-width: 576px) {
+        padding: 80px 10px;
+      }
+
       &-title {
         color: #0795ff;
         font-size: 26px;
@@ -300,6 +346,14 @@ export const HomeWrapper = styled.div`
         gap: 3%;
         padding: 0 200px;
 
+        @media only screen and (max-width: 576px) {
+          flex-direction: column;
+          gap: 20px;
+          width: 100%;
+          padding: 0;
+          padding: 0 20px;
+        }
+
         &-item {
           /* width: 30%; */
           border: 2px solid #ffc52e;
@@ -310,6 +364,10 @@ export const HomeWrapper = styled.div`
           display: flex;
           flex-direction: column;
           padding: 24px;
+
+          @media only screen and (max-width: 576px) {
+            width: 100%;
+          }
 
           & > div:first-child {
             display: flex;

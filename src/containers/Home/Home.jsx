@@ -157,7 +157,7 @@ const Home = () => {
               <p>FMCG SUKs</p>
             </div>
             <Divider
-              type="vertical"
+              type={isMobile ? "horizontal" : "vertical"}
               style={{ borderLeft: "2px solid #0795ff" }}
             />
             <div>
@@ -165,7 +165,7 @@ const Home = () => {
               <p>FMCG SUKs</p>
             </div>
             <Divider
-              type="vertical"
+              type={isMobile ? "horizontal" : "vertical"}
               style={{ borderLeft: "2px solid #0795ff" }}
             />
             <div>

@@ -7,6 +7,10 @@ export const BlogWrapper = styled.div`
     width: 100%;
     height: 498px;
     position: relative;
+
+    @media only screen and (max-width: 576px) {
+      height: 50vh;
+    }
     & > div {
       position: absolute;
       z-index: 1;
@@ -24,6 +28,10 @@ export const BlogWrapper = styled.div`
   .blog-content {
     padding: 50px 200px;
 
+    @media only screen and (max-width: 576px) {
+      padding: 40px 15px;
+    }
+
     & > div.blog-content-list {
       margin-top: 30px;
       display: flex;
@@ -31,10 +39,20 @@ export const BlogWrapper = styled.div`
       align-items: center;
       width: 100%;
       gap: 3%;
+
+      @media only screen and (max-width: 576px) {
+        flex-direction: column;
+        gap: 30px;
+      }
+
       & > a.blog-content-item {
         width: 30%;
         display: block;
         margin-bottom: 20px;
+
+        @media only screen and (max-width: 576px) {
+          width: 100%;
+        }
 
         & > div:first-child {
           width: 100%;

@@ -267,7 +267,6 @@ export const NavWrapper = styled.div`
             padding: 15px 32px;
             padding-left: 0;
             text-align: left;
-            text-transform: uppercase;
             color: #465059;
             font-weight: 500;
             font-size: 14px;

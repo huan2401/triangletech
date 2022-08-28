@@ -7,9 +7,14 @@ export const FooterWrapper = styled.div`
     width: 100%;
     height: auto;
 
+    @media only screen and (max-width: 576px) {
+      height: 164px;
+    }
+
     & > img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -17,9 +22,19 @@ export const FooterWrapper = styled.div`
     padding: 50px 24px;
     display: flex;
     justify-content: space-evenly;
+
+    @media only screen and (max-width: 576px) {
+      padding: 24px;
+      flex-direction: column;
+      gap: 40px;
+    }
     & > div.footer-content-left {
       display: flex;
       gap: 20px;
+
+      @media only screen and (max-width: 576px) {
+        flex-direction: column;
+      }
 
       & > div:first-child {
         display: flex;
@@ -30,6 +45,11 @@ export const FooterWrapper = styled.div`
           color: #ff8a00;
           font-weight: bold;
           transform: translateY(-24px);
+
+          @media only screen and (max-width: 576px) {
+            transform: initial;
+            text-align: center;
+          }
         }
       }
 
@@ -39,6 +59,10 @@ export const FooterWrapper = styled.div`
           font-weight: 400;
           letter-spacing: 1px;
           color: #646b72;
+
+          @media only screen and (max-width: 576px) {
+            text-align: center;
+          }
 
           & > a {
             font-size: 17px;
@@ -54,6 +78,10 @@ export const FooterWrapper = styled.div`
       display: flex;
       gap: 20px;
 
+      @media only screen and (max-width: 576px) {
+        flex-direction: column;
+      }
+
       & > div:first-child {
         & > a {
           display: block;
@@ -62,12 +90,19 @@ export const FooterWrapper = styled.div`
           letter-spacing: 1px;
           color: #646b72;
           text-decoration: underline;
+
+          @media only screen and (max-width: 576px) {
+            text-align: center;
+          }
         }
 
         & > div {
-            display: flex;
-            gap: 5px;
-            margin-top: 10px;
+          display: flex;
+          gap: 5px;
+          margin-top: 10px;
+          @media only screen and (max-width: 576px) {
+            justify-content: center;
+          }
           & > a {
             display: block;
           }
@@ -78,6 +113,10 @@ export const FooterWrapper = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @media only screen and (max-width: 576px) {
+          align-items: center;
+          gap: 20px;
+        }
         & > img {
           width: 120px;
           height: 46px;

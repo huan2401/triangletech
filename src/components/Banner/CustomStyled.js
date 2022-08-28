@@ -62,6 +62,7 @@ export const BannerWrapper = styled.div`
 
         @media only screen and (max-width: 576px) {
           font-size: 20px;
+          width: 100%;
         }
 
         & > span {

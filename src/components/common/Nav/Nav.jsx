@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SwitchLangButton from "components/common/SwitchLangButton/SwitchLangButton";
 import { NavWrapper } from "./CustomStyled";
 import { Divider } from "antd";
 import { CaretDownOutlined, CloseOutlined } from "@ant-design/icons";
 import ZaloImg from "assets/images/zalo.png";
+import CHPlayImg from "assets/images/ch-play.webp";
+import IosImg from "assets/images/appStoreIcon.webp";
 import DownloadImg from "assets/images/download.png";
 import { t } from "i18next";
 import { useBreakpoints } from "hooks/useBreakpoint";
@@ -14,7 +16,9 @@ import { changeLanguage } from "utils/i18n";
 
 const Nav = ({ collapse }) => {
   const [showNavHome, setShowNavHome] = useState(false);
-  console.log("collapse", collapse);
+
+  const path = useLocation();
+  console.log("path", path.pathname);
 
   const { isMobile } = useBreakpoints();
 
@@ -89,7 +93,13 @@ const Nav = ({ collapse }) => {
                 className="nav-right-mobile-2-home"
                 onClick={() => setShowNavHome(true)}
               >
-                <p>Home</p>
+                <p>
+                  {path.pathname === "/hiring"
+                    ? "Hiring"
+                    : path.pathname === "/blog"
+                    ? "Blog"
+                    : "Home"}
+                </p>
                 <CaretDownOutlined />
               </div>
             </div>
@@ -135,21 +145,21 @@ const Nav = ({ collapse }) => {
             <div>
               <div>
                 <div>
-                  <img src={ENLogo} alt="" />
+                  <img src={ZaloImg} alt="" />
                 </div>
-                <p>{t("english")}</p>
+                <p>Telio Zalo Store</p>
               </div>
               <div>
                 <div>
-                  <img src={VNLogo} alt="" />
+                  <img src={CHPlayImg} alt="" />
                 </div>
-                <p>{t("vietnamese")}</p>
+                <p>Telio App (Android)</p>
               </div>
               <div>
                 <div>
-                  <img src={VNLogo} alt="" />
+                  <img src={IosImg} alt="" />
                 </div>
-                <p>{t("vietnamese")}</p>
+                <p>Telio App (IOS)</p>
               </div>
             </div>
           </div>
