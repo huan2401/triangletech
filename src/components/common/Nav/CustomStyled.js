@@ -71,6 +71,10 @@ export const NavWrapper = styled.div`
           color: blue;
         }
       }
+
+      .nav-left-active {
+        color: blue;
+      }
     }
   }
   & > div.nav-right {
@@ -97,6 +101,7 @@ export const NavWrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 10px;
+        cursor: pointer;
 
         & > p {
           font-size: 16px;
@@ -137,7 +142,7 @@ export const NavWrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 10px;
-
+        cursor: pointer;
         & > p {
           font-size: 16px;
           white-space: nowrap;

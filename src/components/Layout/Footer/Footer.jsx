@@ -30,11 +30,9 @@ const Footer = () => {
         </div>
         <div className="footer-content-right">
           <div>
-            <Link to="/">Chính sách thanh toán</Link>
             <Link to="/">Chính sách giao hàng</Link>
-            <Link to="/">Chính sách đổi trả</Link>
-            <Link to="/">Chính sách Nhà bán hàng</Link>
-            <Link to="/">Chính sách bảo mật</Link>
+            <Link to="/">Chính sách thanh toán</Link>
+            <Link to="/">Chính sách đặt hàng</Link>
             <div>
               <Link to="/">
                 <img src={IconZalo} alt="" />

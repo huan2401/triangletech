@@ -31,8 +31,18 @@ const Nav = ({ collapse }) => {
 
         {!isMobile && (
           <div>
-            <Link to="/hiring">{t("we are hiring")}</Link>
-            <Link to="/blog">BLOG</Link>
+            <Link
+              to="/hiring"
+              className={path.pathname === "/hiring" ? "nav-left-active" : ""}
+            >
+              {t("we are hiring")}
+            </Link>
+            <Link
+              to="/blog"
+              className={path.pathname === "/blog" ? "nav-left-active" : ""}
+            >
+              BLOG
+            </Link>
           </div>
         )}
       </div>

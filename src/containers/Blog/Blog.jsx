@@ -1,6 +1,6 @@
 import Nav from "components/common/Nav/Nav";
 import React, { useEffect } from "react";
-import Banner from "assets/images/hiring-banner.webp";
+import BannerBg from "assets/images/banner.jpg";
 import Item from "assets/images/blog-item.webp";
 import Footer from "components/Layout/Footer/Footer";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ const Blog = () => {
       <Nav collapse={true} />
       <div className="blog-banner">
         <div>
-          <img src={Banner} alt="" />
+          <img src={BannerBg} alt="" />
         </div>
       </div>
       <div className="blog-content">

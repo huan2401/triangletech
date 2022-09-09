@@ -58,6 +58,7 @@ export const HomeWrapper = styled.div`
           }
 
           .info-product-item {
+            flex: 1;
             align-items: center;
             background: #fff;
             border-radius: 16px;
@@ -92,6 +93,7 @@ export const HomeWrapper = styled.div`
               display: flex;
               flex-direction: column;
               gap: 30px;
+              min-height: 230px;
 
               & > p:first-child {
                 color: #465059;
@@ -99,6 +101,8 @@ export const HomeWrapper = styled.div`
                 letter-spacing: 2.43px;
                 text-transform: uppercase;
                 text-align: center;
+                min-height: 88px;
+                line-height: 2;
               }
               & > p:last-child {
                 font-size: 14px;
@@ -198,22 +202,24 @@ export const HomeWrapper = styled.div`
     }
     .section-4 {
       background-color: #dbf0ff;
-      padding: 60px 200px;
+      /* padding: 60px 200px; */
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: relative;
       z-index: 0;
+      min-height: 600px;
 
       div.section-4-left-button {
         position: absolute;
-        z-index: 2;
-        bottom: 80px;
+        z-index: 20;
+        bottom: 40px;
+        left: 200px;
 
         align-items: center;
         background: #fff;
         border-radius: 200px;
-        /* box-shadow: 0 10px 40px rgb(103 128 155 / 40%); */
+        box-shadow: 0 10px 40px rgb(103 128 155 / 40%);
         display: inline-flex;
         gap: 10px;
         justify-content: center;
@@ -241,12 +247,16 @@ export const HomeWrapper = styled.div`
 
       &-left {
         /* width: 50%; */
-        height: 400px;
+        height: 600px;
         overflow: hidden;
         overflow-y: auto;
         overflow: -moz-scrollbars-none;
         -ms-overflow-style: none;
-        position: relative;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+        padding: 60px 200px;
+        box-sizing: border-box;
 
         &::-webkit-scrollbar {
           width: 0 !important;
@@ -255,7 +265,8 @@ export const HomeWrapper = styled.div`
 
         div.section-4-left-item {
           display: flex;
-          height: 100%;
+          height: 600px;
+          width: 50%;
 
           & > img {
             width: 110px;
@@ -265,8 +276,10 @@ export const HomeWrapper = styled.div`
           & > div {
             & > p:first-child {
               text-transform: uppercase;
-              font-size: 60px;
+              font-size: 46px;
               color: #0795ff;
+              font-weight: bold;
+              margin-bottom: 30px !important;
             }
 
             & > p:last-child {
@@ -278,10 +291,11 @@ export const HomeWrapper = styled.div`
       }
 
       &-right {
-        width: 50%;
+        width: 100%;
         height: 520px;
-        position: relative;
-        z-index: 0;
+        position: absolute;
+        z-index: 1;
+        right: 200px;
         & > img:first-child {
           width: 297px;
           height: 100%;
@@ -319,6 +333,109 @@ export const HomeWrapper = styled.div`
             height: 404px;
             object-fit: cover;
           }
+        }
+      }
+    }
+    .section-4-mobile {
+      background-color: #dbf0ff;
+      padding: 50px 12px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & > div:not(:first-child) {
+        margin-top: 50px;
+      }
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        & > div.section-4-mobile-item-title {
+          & > p:first-child {
+            text-transform: uppercase;
+            font-size: 28px;
+            color: #0795ff;
+            font-weight: bold;
+            text-align: center;
+          }
+
+          & > p:last-child {
+            color: #0795ff;
+            font-size: 18px;
+            text-align: center;
+          }
+        }
+
+        & > div:last-child {
+          width: 100%;
+          height: 520px;
+          position: relative;
+          z-index: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          & > img:first-child {
+            width: 297px;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            /* right: 0; */
+          }
+          & > img:nth-child(2) {
+            position: absolute;
+            z-index: 2;
+
+            /* right: 29px; */
+            width: 240px;
+            height: 89%;
+            top: 22px;
+          }
+          & > div {
+            position: absolute;
+            z-index: 3;
+            width: 240px;
+            top: 80px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 404px;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      &-button {
+        width: 80%;
+        align-items: center;
+        background: #fff;
+        border-radius: 200px;
+        box-shadow: 0 10px 40px rgb(103 128 155 / 40%);
+        display: inline-flex;
+        gap: 10px;
+        justify-content: center;
+        /* margin: 3rem 6rem 12rem 9.5rem; */
+        padding: 1rem;
+
+        & > p {
+          color: #286af6;
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: 0.8px;
+          line-height: 150%;
+          white-space: nowrap;
+        }
+
+        & > img {
+          width: 25px;
+          height: 25px;
+          object-fit: cover;
         }
       }
     }

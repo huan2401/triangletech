@@ -1,7 +1,7 @@
 import Nav from "components/common/Nav/Nav";
 import React, { useEffect } from "react";
 import { HiringWrapper } from "./CustomStyled";
-import Banner from "assets/images/hiring-banner.webp";
+import BannerBg from "assets/images/banner.jpg";
 import Item from "assets/images/hiring-about-us.webp";
 import Footer from "components/Layout/Footer/Footer";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const Hiring = () => {
       <Nav collapse={true} />
       <div className="hiring-banner">
         <div>
-          <img src={Banner} alt="" />
+          <img src={BannerBg} alt="" />
         </div>
         <div>
           <p>JOIN TELIO TODAY</p>

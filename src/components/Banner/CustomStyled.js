@@ -38,10 +38,21 @@ export const BannerWrapper = styled.div`
       justify-content: space-between;
 
       & > div.banner-content-header-logo {
-        & > p {
+        & > p:first-child {
           font-size: 24px;
           color: #fff;
           font-weight: bold;
+        }
+
+        & > p:last-child {
+          font-size: 12px;
+          color: #fff;
+
+          @media only screen and (max-width: 576px) {
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+          }
         }
       }
       & > div.banner-content-header-lang {
@@ -53,6 +64,10 @@ export const BannerWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media only screen and (max-width: 576px) {
+        margin-top: 180px;
+      }
       & > p {
         color: #fff;
         font-size: 36px;

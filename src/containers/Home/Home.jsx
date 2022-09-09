@@ -17,6 +17,7 @@ import Slide1Img from "assets/images/value3.webp";
 import Footer from "components/Layout/Footer/Footer";
 import ZaloImg from "assets/images/zalo.png";
 import { useBreakpoints } from "hooks/useBreakpoint";
+import { t } from "i18next";
 
 const Home = () => {
   const [toggleShowNav, setToggleShowNav] = useState(false);
@@ -96,7 +97,9 @@ const Home = () => {
       <div className="home-content" id="home-content">
         <Banner showNav={toggleShowNav} />
         <div className="home-content-info-product">
-          <p className="info-product-title">NOW AVAILABLE FOR 3 VERTICALS</p>
+          <p className="info-product-title">
+            {t("now available for 3 verticals")}
+          </p>
           <div className="info-product-detail">
             <div>
               <div className="info-product-item">
@@ -104,10 +107,11 @@ const Home = () => {
                   <img src={Item1} alt="#" />
                 </div>
                 <div>
-                  <p>FMCG</p>
+                  <p>{t("manufacturing electrical cabinets")}</p>
                   <p>
-                    Mom-and-pop stores can get anything from Beers to Instant
-                    Noodles with a single source.
+                    {t(
+                      "support customers to plan for technical safety, optimize cost and deliver the fastest product to the construction site"
+                    )}
                   </p>
                 </div>
                 <div>
@@ -119,10 +123,11 @@ const Home = () => {
                   <img src={Item2} alt="#" />
                 </div>
                 <div>
-                  <p>LIFESTYLE</p>
+                  <p>{t("cable tray ladder, electrical equipment")}</p>
                   <p>
-                    Offering high quality products from cosmetic and fashion
-                    brands to wholesalers.
+                    {t(
+                      "value lies in every small detail, ensuring to send to customers genuine products, guaranteed quality in each order."
+                    )}
                   </p>
                 </div>
                 <div>
@@ -134,10 +139,11 @@ const Home = () => {
                   <img src={Item3} alt="#" />
                 </div>
                 <div>
-                  <p>HEALTHCARE</p>
+                  <p>{t("after sale service")}</p>
                   <p>
-                    A single source of medicines to medical equipments from
-                    trusted brands for Pharmacies.
+                    {t(
+                      "For us, the main service is the product. Any requirements arising after your delivery will be met by Triangle tech as a valuable order."
+                    )}
                   </p>
                 </div>
                 <div>
@@ -149,7 +155,7 @@ const Home = () => {
         </div>
         <section className="section-3">
           <div>
-            <p>THOUSANDS OF VERIFIED PRODUCTS</p>
+            <p>CAM KẾT CHÍNH HÃNG TRÊN TỪNG SẢN PHẨM</p>
           </div>
           <div>
             <div>
@@ -178,66 +184,136 @@ const Home = () => {
           </div>
         </section>
         <div>
-          {/* {document.querySelectorAll(".section-4")[0].getBoundingClientRect()
-            .top <= 0} */}
-          <section className="section-4">
-            <div className="section-4-left-button">
-              <img src={ZaloImg} alt="" />
-              <p>Buy on Zalo</p>
-            </div>
-            <div className="section-4-left">
-              <div className="section-4-left-item">
-                <img src={BestOfferImg} alt="" />
-                <div>
-                  <p>EXCLUSIVE OFFERS</p>
-                  <p>
-                    By partnering with brands, we ensure the best deals for our
-                    retailers.
-                  </p>
+          {!isMobile ? (
+            <section className="section-4">
+              <div className="section-4-left-button">
+                <img src={ZaloImg} alt="" />
+                <p>Buy on Zalo</p>
+              </div>
+              <div className="section-4-left">
+                <div className="section-4-left-item">
+                  <img src={BestOfferImg} alt="" />
+                  <div>
+                    <p>Dịch vụ "trước bán" tận tình</p>
+                    <p>
+                      Với đội ngũ kỹ sư giàu kinh nghiệm, tâm huyết. Chúng tôi
+                      cam kết sẽ lên phương án kỹ thuật tối ưu cùng với báo giá
+                      MIỄN PHÍ trong vòng 48h kể từ khi nhận được yêu cầu
+                    </p>
+                  </div>
+                </div>
+                <div className="section-4-left-item">
+                  <img src={BestOfferImg} alt="" />
+                  <div>
+                    <p>Giao hàng nhanh chóng</p>
+                    <p>
+                      Chia sẻ với những dự án có tiến độ "cực căng", Với quy
+                      trình sản xuất end-to-end, chúng tôi cam kết giao hàng
+                      đúng lịch để đảm bảo đúng tiến độ cho Quý khách hàng
+                    </p>
+                  </div>
+                </div>
+                <div className="section-4-left-item">
+                  <img src={BestOfferImg} alt="" />
+                  <div>
+                    <p>Chất lượng và dịch vụ hoàn hảo</p>
+                    <p>
+                      Triangle Tech đảm bảo chất lượng sản phẩm đúng với yêu cầu
+                      của quý khách, cùng với lời cam kết luôn đồng hành cùng
+                      Quý khách hàng trong từng vấn đề nhỏ nhất
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="section-4-left-item">
-                <img src={BestOfferImg} alt="" />
+              <div className="section-4-right">
+                <img src={PhoneImg} alt="" />
+                <img src={PhoneBgImg} alt="" />
                 <div>
-                  <p>EXCLUSIVE OFFERS</p>
-                  <p>
-                    By partnering with brands, we ensure the best deals for our
-                    retailers.
-                  </p>
+                  <Carousel
+                    afterChange={onChange}
+                    ref={carouselRef}
+                    dots={false}
+                  >
+                    <div>
+                      <img src={Slide1Img} alt="" />
+                    </div>
+                    <div>
+                      <img src={Slide1Img} alt="" />
+                    </div>
+                    <div>
+                      <img src={Slide1Img} alt="" />
+                    </div>
+                  </Carousel>
                 </div>
               </div>
-              <div className="section-4-left-item">
+            </section>
+          ) : (
+            <section className="section-4-mobile">
+              <div className="section-4-mobile-item">
                 <img src={BestOfferImg} alt="" />
-                <div>
-                  <p>EXCLUSIVE OFFERS</p>
+                <div className="section-4-mobile-item-title">
+                  <p>Dịch vụ "trước bán" tận tình</p>
                   <p>
-                    By partnering with brands, we ensure the best deals for our
-                    retailers.
+                    Với đội ngũ kỹ sư giàu kinh nghiệm, tâm huyết. Chúng tôi cam
+                    kết sẽ lên phương án kỹ thuật tối ưu cùng với báo giá MIỄN
+                    PHÍ trong vòng 48h kể từ khi nhận được yêu cầu
                   </p>
                 </div>
-              </div>
-            </div>
-            <div className="section-4-right">
-              <img src={PhoneImg} alt="" />
-              <img src={PhoneBgImg} alt="" />
-              <div>
-                <Carousel afterChange={onChange} ref={carouselRef} dots={false}>
+                <div>
+                  <img src={PhoneImg} alt="" />
+                  <img src={PhoneBgImg} alt="" />
                   <div>
                     <img src={Slide1Img} alt="" />
                   </div>
-                  <div>
-                    <img src={Slide1Img} alt="" />
-                  </div>
-                  <div>
-                    <img src={Slide1Img} alt="" />
-                  </div>
-                </Carousel>
+                </div>
               </div>
-            </div>
-          </section>
+              <div className="section-4-mobile-item">
+                <img src={BestOfferImg} alt="" />
+                <div className="section-4-mobile-item-title">
+                  <p>Giao hàng nhanh chóng</p>
+                  <p>
+                    Chia sẻ với những dự án có tiến độ "cực căng", Với quy trình
+                    sản xuất end-to-end, chúng tôi cam kết giao hàng đúng lịch
+                    để đảm bảo đúng tiến độ cho Quý khách hàng
+                  </p>
+                </div>
+                <div>
+                  <img src={PhoneImg} alt="" />
+                  <img src={PhoneBgImg} alt="" />
+                  <div>
+                    <img src={Slide1Img} alt="" />
+                  </div>
+                </div>
+              </div>
+              <div className="section-4-mobile-item">
+                <img src={BestOfferImg} alt="" />
+                <div className="section-4-mobile-item-title">
+                  <p>Chất lượng và dịch vụ hoàn hảo</p>
+                  <p>
+                    Triangle Tech đảm bảo chất lượng sản phẩm đúng với yêu cầu
+                    của quý khách, cùng với lời cam kết luôn đồng hành cùng Quý
+                    khách hàng trong từng vấn đề nhỏ nhất
+                  </p>
+                </div>
+                <div>
+                  <img src={PhoneImg} alt="" />
+                  <img src={PhoneBgImg} alt="" />
+                  <div>
+                    <img src={Slide1Img} alt="" />
+                  </div>
+                </div>
+              </div>
+              <div className="section-4-mobile-button">
+                <img src={ZaloImg} alt="" />
+                <p>Buy on Zalo</p>
+              </div>
+            </section>
+          )}
         </div>
         <section className="section-5">
-          <p className="section-5-title">WHY OUR RETAILERS LOVE US</p>
+          <p className="section-5-title">
+            KHÁCH HÀNG CẢM NHẬN VỀ TRIANGLE TECH
+          </p>
           <div className="section-5-list">
             <div className="section-5-list-item">
               <div>
