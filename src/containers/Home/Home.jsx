@@ -188,39 +188,39 @@ const Home = () => {
             <section className="section-4">
               <div className="section-4-left-button">
                 <img src={ZaloImg} alt="" />
-                <p>Buy on Zalo</p>
+                <p>{t("buy on")} Zalo</p>
               </div>
               <div className="section-4-left">
                 <div className="section-4-left-item">
                   <img src={BestOfferImg} alt="" />
                   <div>
-                    <p>Dịch vụ "trước bán" tận tình</p>
+                    <p>{t("dedicated pre-sale service")}</p>
                     <p>
-                      Với đội ngũ kỹ sư giàu kinh nghiệm, tâm huyết. Chúng tôi
-                      cam kết sẽ lên phương án kỹ thuật tối ưu cùng với báo giá
-                      MIỄN PHÍ trong vòng 48h kể từ khi nhận được yêu cầu
+                      {t(
+                        "With a team of experienced and dedicated engineers. We are committed to making the optimal technical plan with a FREE quote within 48 hours of receiving the request"
+                      )}
                     </p>
                   </div>
                 </div>
                 <div className="section-4-left-item">
                   <img src={BestOfferImg} alt="" />
                   <div>
-                    <p>Giao hàng nhanh chóng</p>
+                    <p>{t("Fast shipping")}</p>
                     <p>
-                      Chia sẻ với những dự án có tiến độ "cực căng", Với quy
-                      trình sản xuất end-to-end, chúng tôi cam kết giao hàng
-                      đúng lịch để đảm bảo đúng tiến độ cho Quý khách hàng
+                      {t(
+                        "Sharing with projects with extremely tight progress, With the end-to-end production process, we are committed to on-time delivery to ensure on-time delivery for our customers"
+                      )}
                     </p>
                   </div>
                 </div>
                 <div className="section-4-left-item">
                   <img src={BestOfferImg} alt="" />
                   <div>
-                    <p>Chất lượng và dịch vụ hoàn hảo</p>
+                    <p>{t("Perfect quality and service")}</p>
                     <p>
-                      Triangle Tech đảm bảo chất lượng sản phẩm đúng với yêu cầu
-                      của quý khách, cùng với lời cam kết luôn đồng hành cùng
-                      Quý khách hàng trong từng vấn đề nhỏ nhất
+                      {t(
+                        "Triangle Tech ensures product quality in accordance with your requirements, along with a commitment to always accompany customers in every smallest issue"
+                      )}
                     </p>
                   </div>
                 </div>
@@ -252,11 +252,11 @@ const Home = () => {
               <div className="section-4-mobile-item">
                 <img src={BestOfferImg} alt="" />
                 <div className="section-4-mobile-item-title">
-                  <p>Dịch vụ "trước bán" tận tình</p>
+                  <p>{t("dedicated pre-sale service")}</p>
                   <p>
-                    Với đội ngũ kỹ sư giàu kinh nghiệm, tâm huyết. Chúng tôi cam
-                    kết sẽ lên phương án kỹ thuật tối ưu cùng với báo giá MIỄN
-                    PHÍ trong vòng 48h kể từ khi nhận được yêu cầu
+                    {t(
+                      "With a team of experienced and dedicated engineers. We are committed to making the optimal technical plan with a FREE quote within 48 hours of receiving the request"
+                    )}
                   </p>
                 </div>
                 <div>
@@ -270,11 +270,11 @@ const Home = () => {
               <div className="section-4-mobile-item">
                 <img src={BestOfferImg} alt="" />
                 <div className="section-4-mobile-item-title">
-                  <p>Giao hàng nhanh chóng</p>
+                  <p>{t("Fast shipping")}</p>
                   <p>
-                    Chia sẻ với những dự án có tiến độ "cực căng", Với quy trình
-                    sản xuất end-to-end, chúng tôi cam kết giao hàng đúng lịch
-                    để đảm bảo đúng tiến độ cho Quý khách hàng
+                    {t(
+                      "Sharing with projects with extremely tight progress, With the end-to-end production process, we are committed to on-time delivery to ensure on-time delivery for our customers"
+                    )}
                   </p>
                 </div>
                 <div>
@@ -288,11 +288,11 @@ const Home = () => {
               <div className="section-4-mobile-item">
                 <img src={BestOfferImg} alt="" />
                 <div className="section-4-mobile-item-title">
-                  <p>Chất lượng và dịch vụ hoàn hảo</p>
+                  <p>{t("Perfect quality and service")}</p>
                   <p>
-                    Triangle Tech đảm bảo chất lượng sản phẩm đúng với yêu cầu
-                    của quý khách, cùng với lời cam kết luôn đồng hành cùng Quý
-                    khách hàng trong từng vấn đề nhỏ nhất
+                    {t(
+                      "Triangle Tech ensures product quality in accordance with your requirements, along with a commitment to always accompany customers in every smallest issue"
+                    )}
                   </p>
                 </div>
                 <div>
@@ -305,14 +305,14 @@ const Home = () => {
               </div>
               <div className="section-4-mobile-button">
                 <img src={ZaloImg} alt="" />
-                <p>Buy on Zalo</p>
+                <p>{t("buy on")} Zalo</p>
               </div>
             </section>
           )}
         </div>
         <section className="section-5">
           <p className="section-5-title">
-            KHÁCH HÀNG CẢM NHẬN VỀ TRIANGLE TECH
+            {t("what customers feel about")} TRIANGLE TECH
           </p>
           <div className="section-5-list">
             <div className="section-5-list-item">

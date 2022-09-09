@@ -41,7 +41,7 @@ const Nav = ({ collapse }) => {
               to="/info"
               className={path.pathname === "/info" ? "nav-left-active" : ""}
             >
-              INFO
+              {t("info")}
             </Link>
           </div>
         )}
@@ -51,7 +51,7 @@ const Nav = ({ collapse }) => {
           <div>
             <div>
               <img src={ZaloImg} alt="" />
-              <p>Zalo store</p>
+              <p>{t("zalo store")}</p>
             </div>
             <Divider
               type={isMobile ? "horizontal" : "vertical"}
@@ -61,7 +61,7 @@ const Nav = ({ collapse }) => {
             />
             <div>
               <img src={DownloadImg} alt="" />
-              <p>Mobile app</p>
+              <p>{t("mobile app")}</p>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ const Nav = ({ collapse }) => {
             <div className="nav-right-mobile-1">
               <div>
                 <img src={ZaloImg} alt="" />
-                <p>Zalo store</p>
+                <p>{t("zalo store")}</p>
               </div>
               <Divider
                 type={isMobile ? "horizontal" : "vertical"}
@@ -94,7 +94,7 @@ const Nav = ({ collapse }) => {
               />
               <div>
                 <img src={DownloadImg} alt="" />
-                <p>Mobile app</p>
+                <p>{t("mobile app")}</p>
               </div>
             </div>
           ) : (
@@ -105,10 +105,10 @@ const Nav = ({ collapse }) => {
               >
                 <p>
                   {path.pathname === "/hiring"
-                    ? "Hiring"
+                    ? t("hiring")
                     : path.pathname === "/info"
-                    ? "Info"
-                    : "Home"}
+                    ? t("info")
+                    : t("home")}
                 </p>
                 <CaretDownOutlined />
               </div>
@@ -123,10 +123,10 @@ const Nav = ({ collapse }) => {
             <span>Close</span>
             <CloseOutlined />
           </p>
-          <Link to="/hiring">We are hiring</Link>
-          <Link to="/info">Info</Link>
+          <Link to="/hiring">{t("we are hiring")}</Link>
+          <Link to="/info">{t("info")}</Link>
           <div className="fullScreen-lang">
-            <p>Language</p>
+            <p>{t("language")}</p>
             <div>
               <div
                 onClick={() => {
@@ -151,25 +151,25 @@ const Nav = ({ collapse }) => {
             </div>
           </div>
           <div className="fullScreen-product">
-            <p>Product</p>
+            <p>{t("product")}</p>
             <div>
               <div>
                 <div>
                   <img src={ZaloImg} alt="" />
                 </div>
-                <p>Telio Zalo Store</p>
+                <p>Triangletech {t("zalo store")}</p>
               </div>
               <div>
                 <div>
                   <img src={CHPlayImg} alt="" />
                 </div>
-                <p>Telio App (Android)</p>
+                <p>Triangletech {t("mobile app")} (Android)</p>
               </div>
               <div>
                 <div>
                   <img src={IosImg} alt="" />
                 </div>
-                <p>Telio App (IOS)</p>
+                <p>Triangletech {t("mobile app")} (IOS)</p>
               </div>
             </div>
           </div>

@@ -66,6 +66,7 @@ export const NavWrapper = styled.div`
         font-size: 18px;
         color: #000;
         font-weight: 500;
+        text-transform: uppercase;
         &:hover {
           margin-bottom: 2px;
           color: blue;
@@ -276,6 +277,7 @@ export const NavWrapper = styled.div`
             font-weight: 500;
             font-size: 14px;
             display: block;
+            /* white-space: nowrap; */
           }
         }
 

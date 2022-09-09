@@ -97,7 +97,8 @@ export const HomeWrapper = styled.div`
 
               & > p:first-child {
                 color: #465059;
-                font-size: 22px;
+                font-size: 16px;
+                font-weight: bold;
                 letter-spacing: 2.43px;
                 text-transform: uppercase;
                 text-align: center;

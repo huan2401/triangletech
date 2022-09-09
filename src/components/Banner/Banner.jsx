@@ -28,14 +28,10 @@ const Banner = ({ showNav }) => {
         </div>
         <div className="banner-content-msg">
           <p>
-            {/* {t("join")}
-            {isMobile && <br />}
-            <span>60,000+ {t("retailers")}</span>
-            {isMobile && <br />}
-            {t("who trust telio source everyday")} */}
-            HƯỚNG TỚI SỰ HOÀN HẢO <br />
-            Đưa sản phẩm TỦ ĐIỆN và thang máng cáp với chất lượng hoàn hảo nhất
-            - dịch vụ tốt nhất - Giá thành phù hợp nhất tới công trình của bạn
+            {t("going to perfect")} <br />
+            {t(
+              "Bringing ELECTRICAL CONTROL and cable tray ladders with the best quality - the best service - The most suitable price to your project"
+            )}
           </p>
         </div>
         <div className="banner-content-link">
