@@ -4,10 +4,10 @@ import BannerBg from "assets/images/banner.jpg";
 import Item from "assets/images/blog-item.webp";
 import Footer from "components/Layout/Footer/Footer";
 import { Link } from "react-router-dom";
-import { BlogWrapper } from "./CustomStyled";
+import { InfoWrapper } from "./CustomStyled";
 import { Pagination } from "antd";
 
-const Blog = () => {
+const Info = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -16,7 +16,7 @@ const Blog = () => {
     });
   }, []);
   return (
-    <BlogWrapper>
+    <InfoWrapper>
       <Nav collapse={true} />
       <div className="blog-banner">
         <div>
@@ -99,8 +99,8 @@ const Blog = () => {
         </div>
       </div>
       <Footer />
-    </BlogWrapper>
+    </InfoWrapper>
   );
 };
 
-export default Blog;
+export default Info;

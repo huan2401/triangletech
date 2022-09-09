@@ -155,7 +155,7 @@ const Home = () => {
         </div>
         <section className="section-3">
           <div>
-            <p>CAM KẾT CHÍNH HÃNG TRÊN TỪNG SẢN PHẨM</p>
+            <p>{t("genuine commitment on each product")}</p>
           </div>
           <div>
             <div>

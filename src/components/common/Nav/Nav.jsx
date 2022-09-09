@@ -38,10 +38,10 @@ const Nav = ({ collapse }) => {
               {t("we are hiring")}
             </Link>
             <Link
-              to="/blog"
-              className={path.pathname === "/blog" ? "nav-left-active" : ""}
+              to="/info"
+              className={path.pathname === "/info" ? "nav-left-active" : ""}
             >
-              BLOG
+              INFO
             </Link>
           </div>
         )}
@@ -106,8 +106,8 @@ const Nav = ({ collapse }) => {
                 <p>
                   {path.pathname === "/hiring"
                     ? "Hiring"
-                    : path.pathname === "/blog"
-                    ? "Blog"
+                    : path.pathname === "/info"
+                    ? "Info"
                     : "Home"}
                 </p>
                 <CaretDownOutlined />
@@ -124,7 +124,7 @@ const Nav = ({ collapse }) => {
             <CloseOutlined />
           </p>
           <Link to="/hiring">We are hiring</Link>
-          <Link to="/blog">Blog</Link>
+          <Link to="/info">Info</Link>
           <div className="fullScreen-lang">
             <p>Language</p>
             <div>

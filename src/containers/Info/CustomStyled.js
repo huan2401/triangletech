@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BlogWrapper = styled.div`
+export const InfoWrapper = styled.div`
   width: 100%;
 
   .blog-banner {
