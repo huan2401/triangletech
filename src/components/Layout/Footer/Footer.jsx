@@ -6,6 +6,7 @@ import IconZalo from "assets/images/icon-zalo.webp";
 import IconMess from "assets/images/icon-mess.webp";
 import { FooterWrapper } from "./CustomStyled";
 import { Link } from "react-router-dom";
+import { t } from "i18next";
 
 const Footer = () => {
   return (
@@ -30,9 +31,9 @@ const Footer = () => {
         </div>
         <div className="footer-content-right">
           <div>
-            <Link to="/">Chính sách giao hàng</Link>
-            <Link to="/">Chính sách thanh toán</Link>
-            <Link to="/">Chính sách đặt hàng</Link>
+            <Link to="/">{t("Delivery policy")}</Link>
+            <Link to="/">{t("Payment policy")}</Link>
+            <Link to="/">{t("Order Policy")}</Link>
             <div>
               <Link to="/">
                 <img src={IconZalo} alt="" />
