@@ -44,7 +44,9 @@ export const HiringWrapper = styled.div`
         text-transform: uppercase;
         font-weight: 600;
         font-size: 36px;
-        color: #fff;
+        padding: 5px 10px;
+        color: blue;
+        background-color: #fff;
 
         @media only screen and (max-width: 576px) {
           font-size: 20px;
@@ -103,7 +105,7 @@ export const HiringWrapper = styled.div`
         gap: 40px;
       }
       & > a.hiring-content-item {
-        width: 30%;
+        flex: 1;
         display: block;
 
         @media only screen and (max-width: 576px) {
@@ -112,14 +114,16 @@ export const HiringWrapper = styled.div`
 
         & > div:first-child {
           width: 100%;
+          height: 250px;
 
           & > img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
           }
         }
         & > div:last-child {
-          margin-top: 30px;
+          margin-top: 14px;
           & > p {
             line-height: 30px;
             color: #465059;
@@ -128,10 +132,17 @@ export const HiringWrapper = styled.div`
           & > p:first-child {
             font-weight: 400;
             font-size: 20px;
+            font-weight: 600;
           }
           & > p:last-child {
-            font-weight: 600;
             font-size: 17px;
+            min-height: calc(17px * 3 * 1.3);
+            overflow: hidden;
+            line-height: 1.3;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }

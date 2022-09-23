@@ -2,9 +2,11 @@ import Nav from "components/common/Nav/Nav";
 import React, { useEffect } from "react";
 import { HiringWrapper } from "./CustomStyled";
 import BannerBg from "assets/images/banner.jpg";
-import Item from "assets/images/hiring-about-us.webp";
+import Item from "assets/images/section3-bg.jpg";
+// import Item from "assets/images/hiring-about-us.webp";
 import Footer from "components/Layout/Footer/Footer";
 import { Link } from "react-router-dom";
+import { t } from "i18next";
 
 const Hiring = () => {
   useEffect(() => {
@@ -22,9 +24,9 @@ const Hiring = () => {
           <img src={BannerBg} alt="" />
         </div>
         <div>
-          <p>JOIN TELIO TODAY</p>
+          <p>{t("JOIN Triangle Tech TODAY")}</p>
           <div>
-            <p>Apply now</p>
+            <p>{t("Apply now")}</p>
           </div>
         </div>
       </div>
@@ -36,10 +38,11 @@ const Hiring = () => {
               <img src={Item} alt="" />
             </div>
             <div>
-              <p>CAFEBIZ.VN</p>
+              <p>{t("Business man")}</p>
               <p>
-                CEO startup Telio: Hành trình "gọi vốn con người" là gian nan
-                nhất
+                {t(
+                  "Sales staff of low voltage electrical cabinets, cable tray ladders, electrical equipment"
+                )}
               </p>
             </div>
           </Link>
@@ -48,10 +51,11 @@ const Hiring = () => {
               <img src={Item} alt="" />
             </div>
             <div>
-              <p>CAFEBIZ.VN</p>
+              <p>{t("Mechanical design engineer")}</p>
               <p>
-                CEO startup Telio: Hành trình "gọi vốn con người" là gian nan
-                nhất
+                {t(
+                  "Mechanical engineers design electrical cabinets, cable tray ladders"
+                )}
               </p>
             </div>
           </Link>
@@ -60,11 +64,8 @@ const Hiring = () => {
               <img src={Item} alt="" />
             </div>
             <div>
-              <p>CAFEBIZ.VN</p>
-              <p>
-                CEO startup Telio: Hành trình "gọi vốn con người" là gian nan
-                nhất
-              </p>
+              <p>{t("Electrical Engineer")}</p>
+              <p>{t("Electrical Engineer")}</p>
             </div>
           </Link>
         </div>

@@ -5,7 +5,7 @@ export const FooterWrapper = styled.div`
 
   & > div.footer-banner {
     width: 100%;
-    height: auto;
+    height: 400px;
 
     @media only screen and (max-width: 576px) {
       height: 164px;
@@ -93,6 +93,16 @@ export const FooterWrapper = styled.div`
 
           @media only screen and (max-width: 576px) {
             text-align: center;
+          }
+        }
+        & > div {
+          & > a {
+            display: block;
+            & > img {
+              width: 32px;
+              height: 32px;
+              object-fit: cover;
+            }
           }
         }
 

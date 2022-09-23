@@ -46,18 +46,30 @@ export const NavWrapper = styled.div`
     align-items: center;
     gap: 20px;
 
-    & > a {
-      margin: 0;
-      font-size: 24px;
-      color: #ff8a00;
-      font-weight: bold;
+    & > div:first-child {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-      @media only screen and (max-width: 576px) {
-        font-size: 16px;
+      & > img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+      }
+
+      & > a {
+        margin: 0;
+        font-size: 24px;
+        color: blue;
+        font-weight: bold;
+
+        @media only screen and (max-width: 576px) {
+          font-size: 16px;
+        }
       }
     }
 
-    & > div {
+    & > div.nav-left-navigation {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -67,10 +79,6 @@ export const NavWrapper = styled.div`
         color: #000;
         font-weight: 500;
         text-transform: uppercase;
-        &:hover {
-          margin-bottom: 2px;
-          color: blue;
-        }
       }
 
       .nav-left-active {
@@ -104,6 +112,11 @@ export const NavWrapper = styled.div`
         gap: 10px;
         cursor: pointer;
 
+        & > a {
+          font-size: 16px;
+          white-space: nowrap;
+          color: #000;
+        }
         & > p {
           font-size: 16px;
           white-space: nowrap;
@@ -144,7 +157,8 @@ export const NavWrapper = styled.div`
         align-items: center;
         gap: 10px;
         cursor: pointer;
-        & > p {
+        & > a {
+          color: #000;
           font-size: 16px;
           white-space: nowrap;
         }
@@ -267,9 +281,12 @@ export const NavWrapper = styled.div`
               height: 100%;
               object-fit: cover;
             }
+            & > a {
+              color: #000;
+            }
           }
 
-          & > p {
+          & > a {
             padding: 15px 32px;
             padding-left: 0;
             text-align: left;

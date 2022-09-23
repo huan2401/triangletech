@@ -7,42 +7,43 @@ import { CaretDownOutlined, CloseOutlined } from "@ant-design/icons";
 import ZaloImg from "assets/images/zalo.png";
 import CHPlayImg from "assets/images/ch-play.webp";
 import IosImg from "assets/images/appStoreIcon.webp";
-import DownloadImg from "assets/images/download.png";
+import ImgShopee from "assets/images/shopee.png";
 import { t } from "i18next";
 import { useBreakpoints } from "hooks/useBreakpoint";
 import VNLogo from "assets/images/vn.png";
 import ENLogo from "assets/images/en.png";
 import { changeLanguage } from "utils/i18n";
+import Logo from "assets/images/logo_triangletech.jpg";
 
 const Nav = ({ collapse }) => {
   const [showNavHome, setShowNavHome] = useState(false);
 
   const path = useLocation();
-  console.log("path", path.pathname);
 
   const { isMobile } = useBreakpoints();
-
-  console.log("useBreakpoint", isMobile);
 
   return (
     <NavWrapper collapse={collapse}>
       <div className="nav-left">
-        <Link to="/">Triangletech</Link>
+        <div>
+          <img src={Logo} alt="" />
+          <Link to="/">Triangletech</Link>
+        </div>
 
         {!isMobile && (
-          <div>
+          <div className="nav-left-navigation">
             <Link
               to="/hiring"
               className={path.pathname === "/hiring" ? "nav-left-active" : ""}
             >
               {t("we are hiring")}
             </Link>
-            <Link
+            {/* <Link
               to="/info"
               className={path.pathname === "/info" ? "nav-left-active" : ""}
             >
               {t("info")}
-            </Link>
+            </Link> */}
           </div>
         )}
       </div>
@@ -51,7 +52,12 @@ const Nav = ({ collapse }) => {
           <div>
             <div>
               <img src={ZaloImg} alt="" />
-              <p>{t("zalo store")}</p>
+              <a
+                href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
+                target="_blank"
+              >
+                {t("zalo store")}
+              </a>
             </div>
             <Divider
               type={isMobile ? "horizontal" : "vertical"}
@@ -60,8 +66,13 @@ const Nav = ({ collapse }) => {
               }}
             />
             <div>
-              <img src={DownloadImg} alt="" />
-              <p>{t("mobile app")}</p>
+              <img src={ImgShopee} alt="" />
+              <a
+                href="https://shopee.vn/tudiencongnghiep_triangletech?smtt=0.12157734-1663428015.12"
+                target="_blank"
+              >
+                {t("shopee")}
+              </a>
             </div>
           </div>
 
@@ -84,7 +95,12 @@ const Nav = ({ collapse }) => {
             <div className="nav-right-mobile-1">
               <div>
                 <img src={ZaloImg} alt="" />
-                <p>{t("zalo store")}</p>
+                <a
+                  href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
+                  target="_blank"
+                >
+                  {t("zalo store")}
+                </a>
               </div>
               <Divider
                 type={isMobile ? "horizontal" : "vertical"}
@@ -93,8 +109,13 @@ const Nav = ({ collapse }) => {
                 }}
               />
               <div>
-                <img src={DownloadImg} alt="" />
-                <p>{t("mobile app")}</p>
+                <img src={ImgShopee} alt="" />
+                <a
+                  href="https://shopee.vn/tudiencongnghiep_triangletech?smtt=0.12157734-1663428015.12"
+                  target="_blank"
+                >
+                  {t("shopee")}
+                </a>
               </div>
             </div>
           ) : (
@@ -106,8 +127,8 @@ const Nav = ({ collapse }) => {
                 <p>
                   {path.pathname === "/hiring"
                     ? t("hiring")
-                    : path.pathname === "/info"
-                    ? t("info")
+                    // : path.pathname === "/info"
+                    // ? t("info")
                     : t("home")}
                 </p>
                 <CaretDownOutlined />
@@ -124,7 +145,7 @@ const Nav = ({ collapse }) => {
             <CloseOutlined />
           </p>
           <Link to="/hiring">{t("we are hiring")}</Link>
-          <Link to="/info">{t("info")}</Link>
+          {/* <Link to="/info">{t("info")}</Link> */}
           <div className="fullScreen-lang">
             <p>{t("language")}</p>
             <div>
@@ -157,19 +178,23 @@ const Nav = ({ collapse }) => {
                 <div>
                   <img src={ZaloImg} alt="" />
                 </div>
-                <p>Triangletech {t("zalo store")}</p>
+                <a
+                  href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
+                  target="_blank"
+                >
+                  Triangletech {t("zalo store")}
+                </a>
               </div>
               <div>
                 <div>
-                  <img src={CHPlayImg} alt="" />
+                  <img src={ImgShopee} alt="" />
                 </div>
-                <p>Triangletech {t("mobile app")} (Android)</p>
-              </div>
-              <div>
-                <div>
-                  <img src={IosImg} alt="" />
-                </div>
-                <p>Triangletech {t("mobile app")} (IOS)</p>
+                <a
+                  href="https://shopee.vn/tudiencongnghiep_triangletech?smtt=0.12157734-1663428015.12"
+                  target="_blank"
+                >
+                  Triangletech {t("shopee")}
+                </a>
               </div>
             </div>
           </div>

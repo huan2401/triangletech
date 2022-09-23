@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "containers/Home/Home";
 import NotFound from "containers/NotFound/NotFound";
 import Footer from "components/Layout/Footer/Footer";
-import Info from "containers/Info/Info";
+// import Info from "containers/Info/Info";
 import Hiring from "containers/Hiring/Hiring";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="info" element={<Info />} />
+        {/* <Route path="info" element={<Info />} /> */}
         <Route path="hiring" element={<Hiring />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

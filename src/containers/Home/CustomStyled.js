@@ -3,29 +3,16 @@ import styled from "styled-components";
 export const HomeWrapper = styled.div`
   position: relative;
   width: 100%;
-  /* & > div.home-background {
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    & > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  } */
+
   & > div.home-content {
     position: absolute;
     z-index: 1;
     top: 0;
     width: 100%;
     height: 100vh;
-    /* overflow-y: auto; */
 
     .home-content-info-product {
       width: 100%;
-      /* height: 1000px; */
       background-color: #fff;
       padding: 100px 60px 60px 60px;
 
@@ -76,24 +63,39 @@ export const HomeWrapper = styled.div`
             }
 
             & > div:first-child {
-              min-height: 100px;
+              min-height: 80px;
               width: 100%;
+              position: relative;
               display: flex;
               align-items: center;
               justify-content: center;
-              position: relative;
 
-              & > img {
+              & > div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100px;
+                height: 100px;
                 position: absolute;
                 top: -50%;
+                border-radius: 50%;
+                border: 4px solid #dce5ff;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+                  rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                padding: 6px;
+                & > img {
+                  width: 80%;
+                  height: 80%;
+                  object-fit: cover;
+                }
               }
             }
 
             & > div:nth-child(2) {
               display: flex;
               flex-direction: column;
-              gap: 30px;
-              min-height: 230px;
+              gap: 10px;
+              min-height: 250px;
 
               & > p:first-child {
                 color: #465059;
@@ -102,7 +104,7 @@ export const HomeWrapper = styled.div`
                 letter-spacing: 2.43px;
                 text-transform: uppercase;
                 text-align: center;
-                min-height: 88px;
+                min-height: calc(16px * 2 * 2);
                 line-height: 2;
               }
               & > p:last-child {
@@ -116,9 +118,10 @@ export const HomeWrapper = styled.div`
 
             & > div:last-child {
               width: 260px;
-              height: auto;
+              height: 110px;
 
               & > img {
+                object-fit: cover;
                 width: 100%;
                 height: 100%;
               }
@@ -143,67 +146,32 @@ export const HomeWrapper = styled.div`
           line-height: 30px;
           text-align: center;
           text-transform: uppercase;
-        }
-      }
-      & > div:nth-child(2) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        gap: 10px;
-
-        @media only screen and (max-width: 576px) {
-          flex-direction: column;
-          padding: 0 30%;
-
-          .ant-divider {
-            border-top: 2px solid #0795ff;
-          }
-
-          .ant-divider-horizontal {
-            margin: 9px 0;
-            width: 80%;
-            min-width: 50%;
-          }
-        }
-        & > div {
-          & > p:first-child {
-            font-size: 18px;
-            font-weight: bold;
-            color: #0795ff;
-            letter-spacing: 4px;
-            text-align: center;
-            text-transform: uppercase;
-            @media only screen and (max-width: 576px) {
-              font-size: 22px;
-            }
-          }
-          & > p:last-child {
-            font-size: 6px;
-            font-weight: bold;
-            color: #0795ff;
-            letter-spacing: 4px;
-            text-align: center;
-            text-transform: uppercase;
-            @media only screen and (max-width: 576px) {
-              font-size: 8px;
-            }
-          }
+          font-weight: bold;
         }
       }
 
       & > div:last-child {
         width: 100%;
         margin-top: 40px;
+        padding: 0 100px;
+
+        @media only screen and (max-width: 576px) {
+          padding: 0;
+        }
 
         & > img {
           width: 100%;
         }
       }
     }
+
+    .section-4-wrapper {
+      background-color: #dbf0ff;
+      padding: 60px 0;
+    }
+
     .section-4 {
       background-color: #dbf0ff;
-      /* padding: 60px 200px; */
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -216,33 +184,37 @@ export const HomeWrapper = styled.div`
         z-index: 20;
         bottom: 40px;
         left: 200px;
-
-        align-items: center;
-        background: #fff;
-        border-radius: 200px;
-        box-shadow: 0 10px 40px rgb(103 128 155 / 40%);
-        display: inline-flex;
-        gap: 10px;
         justify-content: center;
-        /* margin: 3rem 6rem 12rem 9.5rem; */
-        padding: 1rem;
-        width: -webkit-fit-content;
-        width: -moz-fit-content;
-        width: fit-content;
+        display: flex;
+        gap: 10px;
 
-        & > p {
-          color: #286af6;
-          font-size: 16px;
-          font-weight: 700;
-          letter-spacing: 0.8px;
-          line-height: 150%;
-          white-space: nowrap;
+        & > div {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 1rem;
+          background: #fff;
+          border-radius: 200px;
+          box-shadow: 0 10px 40px rgb(103 128 155 / 40%);
+          & > p {
+            color: #286af6;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            line-height: 150%;
+            white-space: nowrap;
+          }
+
+          & > img {
+            width: 25px;
+            height: 25px;
+            object-fit: cover;
+          }
         }
-
-        & > img {
-          width: 25px;
-          height: 25px;
-          object-fit: cover;
+        & > div:last-child {
+          & > p {
+            color: #ee4d2d;
+          }
         }
       }
 
@@ -304,34 +276,18 @@ export const HomeWrapper = styled.div`
           z-index: 1;
           right: 0;
         }
-        & > img:nth-child(2) {
-          /* width: 241px;
-          top: 18px;
-          height: 89%;
-          right: 28px; */
-          position: absolute;
-          z-index: 2;
-
-          right: 29px;
-          width: 240px;
-          height: 89%;
-          top: 22px;
-          /* object-fit: cover; */
-        }
         & > div {
           position: absolute;
           z-index: 3;
-          /* height: 100%; */
           right: 29px;
           width: 240px;
-          top: 80px;
-          /* height: 100%; */
-          border-bottom-left-radius: 30px;
-          border-bottom-right-radius: 30px;
+          height: 90%;
+          top: 16px;
+          border-radius: 30px;
           overflow: hidden;
           img {
             width: 100%;
-            height: 404px;
+            height: 100%;
             object-fit: cover;
           }
         }
@@ -374,6 +330,7 @@ export const HomeWrapper = styled.div`
         & > div:last-child {
           width: 100%;
           height: 520px;
+          margin-top: 20px;
           position: relative;
           z-index: 0;
           display: flex;
@@ -384,28 +341,19 @@ export const HomeWrapper = styled.div`
             height: 100%;
             position: absolute;
             z-index: 1;
-            /* right: 0; */
-          }
-          & > img:nth-child(2) {
-            position: absolute;
-            z-index: 2;
-
-            /* right: 29px; */
-            width: 240px;
-            height: 89%;
-            top: 22px;
+            display: none;
           }
           & > div {
             position: absolute;
             z-index: 3;
             width: 240px;
-            top: 80px;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
+            height: 100%;
+            top: 0px;
+            border-radius: 26px;
             overflow: hidden;
             img {
               width: 100%;
-              height: 404px;
+              height: 100%;
               object-fit: cover;
             }
           }
@@ -413,30 +361,41 @@ export const HomeWrapper = styled.div`
       }
 
       &-button {
-        width: 80%;
-        align-items: center;
-        background: #fff;
-        border-radius: 200px;
-        box-shadow: 0 10px 40px rgb(103 128 155 / 40%);
-        display: inline-flex;
-        gap: 10px;
+        position: relative;
+        z-index: 20;
         justify-content: center;
-        /* margin: 3rem 6rem 12rem 9.5rem; */
-        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
-        & > p {
-          color: #286af6;
-          font-size: 16px;
-          font-weight: 700;
-          letter-spacing: 0.8px;
-          line-height: 150%;
-          white-space: nowrap;
+        & > div {
+          display: inline-flex;
+          align-items: center;
+          gap: 20px;
+          padding: 1rem;
+          background: #fff;
+          border-radius: 200px;
+          box-shadow: 0 10px 40px rgb(103 128 155 / 40%);
+          & > p {
+            color: #286af6;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            line-height: 150%;
+            white-space: nowrap;
+          }
+
+          & > img {
+            width: 25px;
+            height: 25px;
+            object-fit: cover;
+          }
         }
 
-        & > img {
-          width: 25px;
-          height: 25px;
-          object-fit: cover;
+        & > div:last-child {
+          & > p {
+            color: #ee4d2d;
+          }
         }
       }
     }
@@ -462,7 +421,7 @@ export const HomeWrapper = styled.div`
         align-items: center;
         justify-content: center;
         gap: 3%;
-        padding: 0 200px;
+        padding: 0 120px;
 
         @media only screen and (max-width: 576px) {
           flex-direction: column;
@@ -470,16 +429,17 @@ export const HomeWrapper = styled.div`
           width: 100%;
           padding: 0;
           padding: 0 20px;
+          margin-top: 50px;
         }
 
         &-item {
-          /* width: 30%; */
           border: 2px solid #ffc52e;
           border-radius: 16px;
           box-shadow: 0 2px 2px 1px rgb(0 0 0 / 10%),
             0 10px 20px rgb(0 0 0 / 10%);
           box-sizing: border-box;
           display: flex;
+          flex: 1;
           flex-direction: column;
           padding: 24px;
 
@@ -493,9 +453,15 @@ export const HomeWrapper = styled.div`
             gap: 10px;
 
             & > img {
-              width: 110px;
-              height: 110px;
+              width: 90px;
+              height: 90px;
+              object-fit: cover;
               border-radius: 50%;
+
+              @media only screen and (max-width: 576px) {
+                width: 60px;
+                height: 60px;
+              }
             }
 
             & > p {
@@ -527,7 +493,7 @@ export const HomeWrapper = styled.div`
               color: #465059;
               font-size: 16px;
               letter-spacing: 1px;
-              min-height: 90px;
+              min-height: 204px;
             }
             & > img:first-child {
               width: 18px;

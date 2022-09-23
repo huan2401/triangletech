@@ -3,14 +3,28 @@ import { HomeWrapper } from "./CustomStyled";
 import { Button, Carousel, Divider, Grid } from "antd";
 import Banner from "components/Banner/Banner";
 import BannerBg from "assets/images/banner-bg.jpg";
-import Item1 from "assets/images/item1.svg";
-import Item2 from "assets/images/item2.svg";
+import Item1 from "assets/images/tủ điện.png";
+import Item2 from "assets/images/thang máng cáp, thiết bị điện.png";
 import Item3 from "assets/images/item3.svg";
-import FMCGLogos from "assets/images/FMCG-Logos.webp";
-import Section3IMG from "assets/images/section-3-img.png";
-import S5ImgItem from "assets/images/section5-img-item.jpg";
+import ImgBrand3 from "assets/images/brand-3.jpg";
+import ImgBrand2 from "assets/images/brand-2.jpg";
+import ImgBrand1 from "assets/images/brand-1.jpg";
+import ImgProduct from "assets/images/section-3-img.png";
+
+import ImgCustomer1 from "assets/images/customer-1.png";
+import ImgCustomer2 from "assets/images/customer-2.png";
+import ImgCustomer3 from "assets/images/customer-3.png";
+
+import ImgSection41 from "assets/images/chất lượng và dịch vụ hoàn hảo.jpg";
+import ImgSection42 from "assets/images/dịch vụ trước bán tận tình.jpg";
+import ImgSection43 from "assets/images/giao hàng nhanh chóng.jpg";
+
+import ImgSection3 from "assets/images/section3-bg.jpg";
+
+import ImgShopee from "assets/images/shopee.png";
+
 import DauNhay from "assets/images/dau-nhay-trai.png";
-import BestOfferImg from "assets/images/best-offer.svg";
+import ImgBestOffer from "assets/images/best-offer.svg";
 import PhoneImg from "assets/images/phone.png";
 import PhoneBgImg from "assets/images/phone-bg.png";
 import Slide1Img from "assets/images/value3.webp";
@@ -91,36 +105,35 @@ const Home = () => {
   }, []);
   return (
     <HomeWrapper>
-      {/* <div className="home-background">
-        <img src={BannerBg} alt="banner-background" />
-      </div> */}
       <div className="home-content" id="home-content">
         <Banner showNav={toggleShowNav} />
         <div className="home-content-info-product">
-          <p className="info-product-title">
-            {t("now available for 3 verticals")}
-          </p>
+          <p className="info-product-title">{t("key products")}</p>
           <div className="info-product-detail">
             <div>
               <div className="info-product-item">
                 <div>
-                  <img src={Item1} alt="#" />
+                  <div>
+                    <img src={Item1} alt="#" />
+                  </div>
                 </div>
                 <div>
                   <p>{t("manufacturing electrical cabinets")}</p>
                   <p>
                     {t(
-                      "support customers to plan for technical safety, optimize cost and deliver the fastest product to the construction site"
+                      "Electrical cabinets are a key product of Triangle tech, we support customers. Support customers to plan technical safety, optimize costs and deliver products as quickly as possible to the construction site."
                     )}
                   </p>
                 </div>
                 <div>
-                  <img src={FMCGLogos} alt="" />
+                  <img src={ImgBrand1} alt="" />
                 </div>
               </div>
               <div className="info-product-item">
                 <div>
-                  <img src={Item2} alt="#" />
+                  <div>
+                    <img src={Item2} alt="#" />
+                  </div>
                 </div>
                 <div>
                   <p>{t("cable tray ladder, electrical equipment")}</p>
@@ -131,12 +144,14 @@ const Home = () => {
                   </p>
                 </div>
                 <div>
-                  <img src={FMCGLogos} alt="" />
+                  <img src={ImgBrand2} alt="" />
                 </div>
               </div>
               <div className="info-product-item">
                 <div>
-                  <img src={Item3} alt="#" />
+                  <div>
+                    <img src={Item3} alt="#" />
+                  </div>
                 </div>
                 <div>
                   <p>{t("after sale service")}</p>
@@ -147,7 +162,7 @@ const Home = () => {
                   </p>
                 </div>
                 <div>
-                  <img src={FMCGLogos} alt="" />
+                  <img src={ImgBrand3} alt="" />
                 </div>
               </div>
             </div>
@@ -158,41 +173,25 @@ const Home = () => {
             <p>{t("genuine commitment on each product")}</p>
           </div>
           <div>
-            <div>
-              <p>1500</p>
-              <p>FMCG SUKs</p>
-            </div>
-            <Divider
-              type={isMobile ? "horizontal" : "vertical"}
-              style={{ borderLeft: "2px solid #0795ff" }}
-            />
-            <div>
-              <p>1500</p>
-              <p>FMCG SUKs</p>
-            </div>
-            <Divider
-              type={isMobile ? "horizontal" : "vertical"}
-              style={{ borderLeft: "2px solid #0795ff" }}
-            />
-            <div>
-              <p>1500</p>
-              <p>FMCG SUKs</p>
-            </div>
-          </div>
-          <div>
-            <img src={Section3IMG} alt="" />
+            <img src={ImgSection3} alt="" />
           </div>
         </section>
-        <div>
+        <div className="section-4-wrapper">
           {!isMobile ? (
             <section className="section-4">
               <div className="section-4-left-button">
-                <img src={ZaloImg} alt="" />
-                <p>{t("buy on")} Zalo</p>
+                <div>
+                  <img src={ZaloImg} alt="" />
+                  <p>{t("buy on")} Zalo</p>
+                </div>
+                <div>
+                  <img src={ImgShopee} alt="" />
+                  <p>{t("buy on")} Shopee</p>
+                </div>
               </div>
               <div className="section-4-left">
                 <div className="section-4-left-item">
-                  <img src={BestOfferImg} alt="" />
+                  <img src={ImgBestOffer} alt="" />
                   <div>
                     <p>{t("dedicated pre-sale service")}</p>
                     <p>
@@ -203,7 +202,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="section-4-left-item">
-                  <img src={BestOfferImg} alt="" />
+                  <img src={ImgBestOffer} alt="" />
                   <div>
                     <p>{t("Fast shipping")}</p>
                     <p>
@@ -214,7 +213,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="section-4-left-item">
-                  <img src={BestOfferImg} alt="" />
+                  <img src={ImgBestOffer} alt="" />
                   <div>
                     <p>{t("Perfect quality and service")}</p>
                     <p>
@@ -227,7 +226,6 @@ const Home = () => {
               </div>
               <div className="section-4-right">
                 <img src={PhoneImg} alt="" />
-                <img src={PhoneBgImg} alt="" />
                 <div>
                   <Carousel
                     afterChange={onChange}
@@ -235,13 +233,13 @@ const Home = () => {
                     dots={false}
                   >
                     <div>
-                      <img src={Slide1Img} alt="" />
+                      <img src={ImgSection41} alt="" />
                     </div>
                     <div>
-                      <img src={Slide1Img} alt="" />
+                      <img src={ImgSection42} alt="" />
                     </div>
                     <div>
-                      <img src={Slide1Img} alt="" />
+                      <img src={ImgSection43} alt="" />
                     </div>
                   </Carousel>
                 </div>
@@ -250,7 +248,7 @@ const Home = () => {
           ) : (
             <section className="section-4-mobile">
               <div className="section-4-mobile-item">
-                <img src={BestOfferImg} alt="" />
+                <img src={ImgBestOffer} alt="" />
                 <div className="section-4-mobile-item-title">
                   <p>{t("dedicated pre-sale service")}</p>
                   <p>
@@ -261,14 +259,13 @@ const Home = () => {
                 </div>
                 <div>
                   <img src={PhoneImg} alt="" />
-                  <img src={PhoneBgImg} alt="" />
                   <div>
-                    <img src={Slide1Img} alt="" />
+                    <img src={ImgSection41} alt="" />
                   </div>
                 </div>
               </div>
               <div className="section-4-mobile-item">
-                <img src={BestOfferImg} alt="" />
+                <img src={ImgBestOffer} alt="" />
                 <div className="section-4-mobile-item-title">
                   <p>{t("Fast shipping")}</p>
                   <p>
@@ -279,14 +276,13 @@ const Home = () => {
                 </div>
                 <div>
                   <img src={PhoneImg} alt="" />
-                  <img src={PhoneBgImg} alt="" />
                   <div>
-                    <img src={Slide1Img} alt="" />
+                    <img src={ImgSection42} alt="" />
                   </div>
                 </div>
               </div>
               <div className="section-4-mobile-item">
-                <img src={BestOfferImg} alt="" />
+                <img src={ImgBestOffer} alt="" />
                 <div className="section-4-mobile-item-title">
                   <p>{t("Perfect quality and service")}</p>
                   <p>
@@ -297,15 +293,20 @@ const Home = () => {
                 </div>
                 <div>
                   <img src={PhoneImg} alt="" />
-                  <img src={PhoneBgImg} alt="" />
                   <div>
-                    <img src={Slide1Img} alt="" />
+                    <img src={ImgSection43} alt="" />
                   </div>
                 </div>
               </div>
               <div className="section-4-mobile-button">
-                <img src={ZaloImg} alt="" />
-                <p>{t("buy on")} Zalo</p>
+                <div>
+                  <img src={ZaloImg} alt="" />
+                  <p>{t("buy on")} Zalo</p>
+                </div>
+                <div>
+                  <img src={ImgShopee} alt="" />
+                  <p>{t("buy on")} Shopee</p>
+                </div>
               </div>
             </section>
           )}
@@ -317,54 +318,54 @@ const Home = () => {
           <div className="section-5-list">
             <div className="section-5-list-item">
               <div>
-                <img src={S5ImgItem} alt="" />
+                <img src={ImgCustomer1} alt="" />
                 <p>
-                  <span>MRS HONG</span>
+                  <span>NGUYỄN XUÂN PHÚ</span>
                   <span>Mieu Mon, HN</span>
                 </p>
               </div>
               <div>
                 <img src={DauNhay} alt="" />
                 <p>
-                  Best thing about Telio is that the prices and promotions are
-                  transparent to all retailers. I can order anywhere anytime via
-                  the Telio Zalo Store
+                  {t(
+                    "General Director of AN PHU Plastic Factory, INVESTOR Enthusiastic consultation, providing optimal solutions to save costs, respond quickly"
+                  )}
                 </p>
                 <img src={DauNhay} alt="" />
               </div>
             </div>
             <div className="section-5-list-item">
               <div>
-                <img src={S5ImgItem} alt="" />
+                <img src={ImgCustomer2} alt="" />
                 <p>
-                  <span>MRS HONG</span>
+                  <span>ĐẶNG TÙNG NAM</span>
                   <span>Mieu Mon, HN</span>
                 </p>
               </div>
               <div>
                 <img src={DauNhay} alt="" />
                 <p>
-                  Best thing about Telio is that the prices and promotions are
-                  transparent to all retailers. I can order anywhere anytime via
-                  the Telio Zalo Store
+                  {t(
+                    "HITEKI VIETNAM JOINT STOCK COMPANY MECHANICAL ELECTRICAL CONTRACTOR Very satisfied with the mechanism as well as sales, enthusiastic and professional technical team, quick quotation, very good after-sales support"
+                  )}
                 </p>
                 <img src={DauNhay} alt="" />
               </div>
             </div>
             <div className="section-5-list-item">
               <div>
-                <img src={S5ImgItem} alt="" />
+                <img src={ImgCustomer3} alt="" />
                 <p>
-                  <span>MRS HONG</span>
+                  <span>Hiếu</span>
                   <span>Mieu Mon, HN</span>
                 </p>
               </div>
               <div>
                 <img src={DauNhay} alt="" />
                 <p>
-                  Best thing about Telio is that the prices and promotions are
-                  transparent to all retailers. I can order anywhere anytime via
-                  the Telio Zalo Store
+                  {t(
+                    "Commander Really trust TRIANGLE TECH, delivery on time, quality as committed, especially enthusiastic support, generally satisfied"
+                  )}
                 </p>
                 <img src={DauNhay} alt="" />
               </div>
