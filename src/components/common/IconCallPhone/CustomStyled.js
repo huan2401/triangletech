@@ -31,9 +31,9 @@ export const IconCallPhoneWrapper = styled.div`
 
       position: relative;
       z-index: 2;
-      /* &:hover {
+      &:hover {
         transform: scale(1.2);
-      } */
+      }
       & > img {
         width: 100%;
         height: 100%;
@@ -76,9 +76,9 @@ export const IconCallPhoneWrapper = styled.div`
     border-radius: 50%;
     background-color: #fff;
     box-sizing: border-box;
-    /* &:hover {
+    &:hover {
       transform: scale(1.2);
-    } */
+    }
     & > img {
       width: 100%;
       height: 100%;
