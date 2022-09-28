@@ -4,16 +4,16 @@ export const IconCallPhoneWrapper = styled.div`
   position: fixed;
   top: 186px;
   right: 10px;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* gap: 10px; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   z-index: 9999;
 
   @media screen and (max-width: 576px) {
     top: 128px;
   }
 
-  & > a {
+  & > a:last-child {
     display: flex;
     gap: 10px;
     position: relative;
@@ -65,8 +65,8 @@ export const IconCallPhoneWrapper = styled.div`
     }
   }
 
-  & > a {
-    /* display: block;
+  & > a:first-child {
+    display: block;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -75,14 +75,14 @@ export const IconCallPhoneWrapper = styled.div`
     padding: 5px;
     border-radius: 50%;
     background-color: #fff;
-    box-sizing: border-box; */
+    box-sizing: border-box;
     /* &:hover {
       transform: scale(1.2);
     } */
-    /* & > img {
+    & > img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    } */
+    }
   }
 `;

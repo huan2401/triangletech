@@ -18,12 +18,12 @@ const IconCallPhone = () => {
 
   return (
     <IconCallPhoneWrapper>
-      {/* <a
+      <a
         href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
         target="_blank"
       >
         <img src={IconZalo} alt="" />
-      </a> */}
+      </a>
       <a
         // href="tel:0926095888"
         href={isMobile ? "tel:0926095888" : ""}
