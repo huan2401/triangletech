@@ -46,10 +46,19 @@ export const HiringWrapper = styled.div`
         font-size: 36px;
         padding: 5px 10px;
         color: blue;
-        background-color: #fff;
+        /* background-color: #fff; */
+        background-color: blue;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        backdrop-filter: blur(10px);
 
         @media only screen and (max-width: 576px) {
           font-size: 20px;
+          text-align: center;
+          padding: 0 20px;
+          width: 80%;
         }
       }
 

@@ -90,16 +90,15 @@ export const BannerWrapper = styled.div`
         margin-top: 180px;
       }
       & > p {
-        /* color: #fff; */
-        background-color: #fff;
+        background-color: blue;
         font-weight: bold;
         text-align: center;
         width: 100%;
 
-        /* @media only screen and (max-width: 576px) {
-          font-size: 20px;
-          width: 100%;
-        } */
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        backdrop-filter: blur(10px);
 
         & > span:first-child {
           font-size: 50px;
@@ -118,14 +117,6 @@ export const BannerWrapper = styled.div`
           }
         }
 
-        /* & > span {
-          display: inline-block;
-          background-color: #fff;
-          padding: 10px;
-          border-radius: 12px;
-          /* color: linear-gradient(#ffc736, #ff8a00); */
-        /* color: #ff8a00; */
-        /* }  */
       }
     }
 
@@ -151,39 +142,6 @@ export const BannerWrapper = styled.div`
         font-weight: bold;
         text-align: center;
         margin-bottom: 20px;
-      }
-    }
-  }
-
-  & > div.icon-fix {
-    position: fixed;
-    top: 186px;
-    right: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 9999;
-
-    @media screen and (max-width: 576px) {
-      top: 128px;
-    }
-
-    & > a {
-      display: block;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      width: 40px;
-      height: 40px;
-      padding: 5px;
-      border-radius: 50%;
-      background-color: #fff;
-      box-sizing: border-box;
-      &:hover {
-        transform: scale(1.2);
-      }
-      & > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
       }
     }
   }

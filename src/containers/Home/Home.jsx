@@ -38,8 +38,6 @@ const Home = () => {
   const [slide, setSlide] = useState(0);
   const { isMobile } = useBreakpoints();
 
-  // console.log("useBreakpoint", isMobile);
-
   const carouselRef = React.createRef();
 
   const handleScroll = (event) => {
@@ -55,8 +53,6 @@ const Home = () => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
-
-  console.log("slide", slide);
 
   useEffect(() => {
     window.scrollTo({
@@ -180,14 +176,20 @@ const Home = () => {
           {!isMobile ? (
             <section className="section-4">
               <div className="section-4-left-button">
-                <div>
+                <a
+                  href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
+                  target={"_blank"}
+                >
                   <img src={ZaloImg} alt="" />
                   <p>{t("buy on")} Zalo</p>
-                </div>
-                <div>
+                </a>
+                <a
+                  href="https://shopee.vn/tudiencongnghiep_triangletech?smtt=0.12157734-1663428015.12"
+                  target={"_blank"}
+                >
                   <img src={ImgShopee} alt="" />
                   <p>{t("buy on")} Shopee</p>
-                </div>
+                </a>
               </div>
               <div className="section-4-left">
                 <div className="section-4-left-item">

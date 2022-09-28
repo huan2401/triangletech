@@ -40,7 +40,7 @@ const Footer = () => {
             <a href={PdfPayment} target="_blank">
               {t("Payment policy")}
             </a>
-            <a href={""}>{t("Order Policy")}</a>
+            {/* <a href={""}>{t("Order Policy")}</a> */}
             <div>
               <a
                 href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"

@@ -27,6 +27,7 @@ export const HomeWrapper = styled.div`
         line-height: 28px;
         text-align: center;
         text-transform: uppercase;
+        font-weight: bold;
       }
       .info-product-detail {
         margin-top: 60px;
@@ -168,6 +169,10 @@ export const HomeWrapper = styled.div`
     .section-4-wrapper {
       background-color: #dbf0ff;
       padding: 60px 0;
+
+      @media screen and (max-width: 576px) {
+        padding: 0;
+      }
     }
 
     .section-4 {
@@ -188,7 +193,8 @@ export const HomeWrapper = styled.div`
         display: flex;
         gap: 10px;
 
-        & > div {
+        & > a {
+
           display: inline-flex;
           align-items: center;
           gap: 10px;
@@ -413,6 +419,7 @@ export const HomeWrapper = styled.div`
         line-height: 28px;
         text-align: center;
         text-transform: uppercase;
+        font-weight: bold;
       }
 
       &-list {

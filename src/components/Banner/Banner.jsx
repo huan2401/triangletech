@@ -10,6 +10,7 @@ import BannerBg from "assets/images/banner.jpg";
 import Logo from "assets/images/logo_triangletech.jpg";
 import IconZalo from "assets/images/icon-zalo.webp";
 import IconPhone from "assets/images/phone-call-icon.png";
+import IconCallPhone from "components/common/IconCallPhone/IconCallPhone";
 
 const Banner = ({ showNav }) => {
   const { isMobile } = useBreakpoints();
@@ -26,7 +27,7 @@ const Banner = ({ showNav }) => {
               <img src={Logo} alt="" />
               <p>Triangletech</p>
             </div>
-            {!isMobile && <p>Hotline : 0926095888</p>}
+            {!isMobile && <p>{t("hotline")} : 0926095888</p>}
           </div>
           <div className="banner-content-header-lang">
             <SwitchLangButton />
@@ -49,17 +50,7 @@ const Banner = ({ showNav }) => {
           <Nav collapse={showNav} />
         </div>
       </div>
-      <div className="icon-fix">
-        <a
-          href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
-          target="_blank"
-        >
-          <img src={IconZalo} alt="" />
-        </a>
-        <a href="tel:0926095888">
-          <img src={IconPhone} alt="" />
-        </a>
-      </div>
+      <IconCallPhone/>
     </BannerWrapper>
   );
 };

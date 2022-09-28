@@ -7,6 +7,7 @@ import Item from "assets/images/section3-bg.jpg";
 import Footer from "components/Layout/Footer/Footer";
 import { Link } from "react-router-dom";
 import { t } from "i18next";
+import IconCallPhone from "components/common/IconCallPhone/IconCallPhone";
 
 const Hiring = () => {
   useEffect(() => {
@@ -16,6 +17,10 @@ const Hiring = () => {
       behavior: "smooth",
     });
   }, []);
+  const handleScroll = () => {
+    const section = document.querySelector("#list-job");
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return (
     <HiringWrapper>
       <Nav collapse={true} />
@@ -26,12 +31,12 @@ const Hiring = () => {
         <div>
           <p>{t("JOIN Triangle Tech TODAY")}</p>
           <div>
-            <p>{t("Apply now")}</p>
+            <p onClick={handleScroll}>{t("Apply now")}</p>
           </div>
         </div>
       </div>
-      <div className="hiring-content">
-        <p>About us</p>
+      <div className="hiring-content" id="list-job">
+        <p>{t("List of job vacancies")}</p>
         <div className="hiring-content-list">
           <Link to="/" className="hiring-content-item">
             <div>
@@ -70,6 +75,7 @@ const Hiring = () => {
           </Link>
         </div>
       </div>
+      <IconCallPhone/>
       <Footer />
     </HiringWrapper>
   );
