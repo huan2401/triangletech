@@ -45,8 +45,12 @@ export const BannerWrapper = styled.div`
           gap: 10px;
           & > p {
             font-size: 30px;
-            color: blue;
+            color: #fff;
             font-weight: bold;
+
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #0066ff;
 
             @media only screen and (max-width: 576px) {
               font-size: 20px;
@@ -54,15 +58,15 @@ export const BannerWrapper = styled.div`
           }
 
           & > img {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             object-fit: cover;
           }
         }
 
         & > p {
-          font-size: 12px;
-          color: #fff;
+          font-size: 16px;
+          color: blue;
 
           @media only screen and (max-width: 576px) {
             font-size: 24px;
@@ -90,10 +94,14 @@ export const BannerWrapper = styled.div`
         margin-top: 180px;
       }
       & > p {
-        background-color: blue;
+        background-color: #fff;
         font-weight: bold;
         text-align: center;
         width: 100%;
+
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #0066ff;
 
         background-clip: text;
         -webkit-background-clip: text;
@@ -116,7 +124,6 @@ export const BannerWrapper = styled.div`
             font-size: 16px;
           }
         }
-
       }
     }
 

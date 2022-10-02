@@ -121,10 +121,68 @@ export const HomeWrapper = styled.div`
               width: 260px;
               height: 110px;
 
-              & > img {
-                object-fit: cover;
+              & > div {
+                display: flex;
+                gap: 10px;
+                & > img {
+                  object-fit: contain;
+                  width: 40%;
+                  height: auto;
+                }
+
+                & > div {
+                  width: 60%;
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  gap: 4px;
+                  overflow: hidden;
+                  & > img {
+                    display: block;
+                    object-fit: contain;
+                    width: 45%;
+                    height: auto;
+                  }
+                }
+              }
+            }
+          }
+
+          .info-product-item:nth-child(2) {
+            & > div:last-child {
+              width: 260px;
+              height: 110px;
+
+              & > div {
                 width: 100%;
                 height: 100%;
+
+                & > div {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                  height: 100%;
+                  overflow: hidden;
+
+                  & > img {
+                    display: block;
+                    object-fit: contain;
+                    width: 45%;
+                    height: auto;
+                  }
+                }
+              }
+            }
+          }
+          .info-product-item:last-child {
+            & > div:last-child {
+              width: 260px;
+              height: 110px;
+
+              & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
               }
             }
           }
@@ -168,7 +226,10 @@ export const HomeWrapper = styled.div`
 
     .section-4-wrapper {
       background-color: #dbf0ff;
-      padding: 60px 0;
+      /* padding: 60px 0; */
+
+      /* height: 100vh; */
+      padding: 100px 0;
 
       @media screen and (max-width: 576px) {
         padding: 0;
@@ -194,7 +255,6 @@ export const HomeWrapper = styled.div`
         gap: 10px;
 
         & > a {
-
           display: inline-flex;
           align-items: center;
           gap: 10px;
@@ -225,17 +285,23 @@ export const HomeWrapper = styled.div`
       }
 
       &-left {
-        /* width: 50%; */
         height: 600px;
+        width: 100%;
+        /* height: 100%; */
+        /* height: calc(100% - 120px);
+        width: calc(100% - 400px); */
         overflow: hidden;
         overflow-y: auto;
         overflow: -moz-scrollbars-none;
         -ms-overflow-style: none;
         position: absolute;
-        width: 100%;
         z-index: 10;
         padding: 60px 200px;
         box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
 
         &::-webkit-scrollbar {
           width: 0 !important;
@@ -244,8 +310,10 @@ export const HomeWrapper = styled.div`
 
         div.section-4-left-item {
           display: flex;
-          height: 600px;
+          /* height: 600px; */
           width: 50%;
+
+          height: 100%;
 
           & > img {
             width: 110px;
@@ -335,7 +403,7 @@ export const HomeWrapper = styled.div`
 
         & > div:last-child {
           width: 100%;
-          height: 520px;
+          height: 600px;
           margin-top: 20px;
           position: relative;
           z-index: 0;
@@ -343,18 +411,17 @@ export const HomeWrapper = styled.div`
           align-items: center;
           justify-content: center;
           & > img:first-child {
-            width: 297px;
+            /* width: 297px; */
             height: 100%;
             position: absolute;
             z-index: 1;
-            display: none;
           }
           & > div {
             position: absolute;
             z-index: 3;
-            width: 240px;
-            height: 100%;
-            top: 0px;
+            width: 274px;
+            height: 532px;
+            top: 20px;
             border-radius: 26px;
             overflow: hidden;
             img {
@@ -427,7 +494,9 @@ export const HomeWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 3%;
+        /* gap: 3%; */
+        gap: calc(100% / 3 - 300px);
+
         padding: 0 120px;
 
         @media only screen and (max-width: 576px) {
@@ -445,23 +514,27 @@ export const HomeWrapper = styled.div`
           box-shadow: 0 2px 2px 1px rgb(0 0 0 / 10%),
             0 10px 20px rgb(0 0 0 / 10%);
           box-sizing: border-box;
-          display: flex;
-          flex: 1;
-          flex-direction: column;
           padding: 24px;
+
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          width: 300px;
+          /* min-width: calc(34%); */
 
           @media only screen and (max-width: 576px) {
             width: 100%;
+            max-width: 100%;
           }
 
           & > div:first-child {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
 
             & > img {
-              width: 90px;
-              height: 90px;
+              width: 60px;
+              height: 60px;
               object-fit: cover;
               border-radius: 50%;
 
@@ -474,6 +547,8 @@ export const HomeWrapper = styled.div`
             & > p {
               display: flex;
               flex-direction: column;
+              width: calc(100% - 60px - 10px);
+              max-width: calc(100% - 60px - 10px);
 
               & > span:first-child {
                 color: #465059;
@@ -487,8 +562,17 @@ export const HomeWrapper = styled.div`
               & > span:last-child {
                 color: #646b72;
                 font-size: 16px;
-                letter-spacing: 1px;
-                white-space: nowrap;
+                display: block;
+                /* letter-spacing: 1px; */
+                /* white-space: nowrap; */
+
+                height: calc(16px * 3 * 1.2);
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: break-spaces;
+                line-height: 1.2;
               }
             }
           }

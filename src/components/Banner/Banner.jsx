@@ -6,7 +6,7 @@ import { BannerWrapper } from "./CustomStyled";
 import Nav from "components/common/Nav/Nav";
 import { t } from "i18next";
 import { useBreakpoints } from "hooks/useBreakpoint";
-import BannerBg from "assets/images/banner.jpg";
+import BannerBg from "assets/images/banner-v2.jpg";
 import Logo from "assets/images/logo_triangletech.jpg";
 import IconZalo from "assets/images/icon-zalo.webp";
 import IconPhone from "assets/images/phone-call-icon.png";

@@ -116,6 +116,7 @@ export const NavWrapper = styled.div`
           font-size: 16px;
           white-space: nowrap;
           color: #000;
+          font-weight: 600;
         }
         & > p {
           font-size: 16px;

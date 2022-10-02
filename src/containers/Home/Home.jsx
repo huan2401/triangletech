@@ -3,12 +3,23 @@ import { HomeWrapper } from "./CustomStyled";
 import { Button, Carousel, Divider, Grid } from "antd";
 import Banner from "components/Banner/Banner";
 import BannerBg from "assets/images/banner-bg.jpg";
+
 import Item1 from "assets/images/tủ điện.png";
 import Item2 from "assets/images/thang máng cáp, thiết bị điện.png";
-import Item3 from "assets/images/item3.svg";
-import ImgBrand3 from "assets/images/brand-3.jpg";
-import ImgBrand2 from "assets/images/brand-2.jpg";
-import ImgBrand1 from "assets/images/brand-1.jpg";
+import Item3 from "assets/images/dịch vụ sau bán.png";
+import Item4 from "assets/images/brand-1.jpg";
+
+import ImgLogoBW from "assets/images/logo-bw.jpg";
+import ImgBrand1 from "assets/images/b61b29486c8ca8d2f19d5.jpg";
+import ImgBrand2 from "assets/images/933ef71ab2de76802fcf7.jpg";
+import ImgBrand3 from "assets/images/brand-1.jpg";
+import ImgBrand4 from "assets/images/brand-3.jpg";
+
+import ImgBrand5 from "assets/images/brand-2.jpg";
+import ImgBrand6 from "assets/images/e944d40691c2559c0cd33.jpg";
+import ImgBrand7 from "assets/images/90da44aa376cf332aa7d.jpg";
+import ImgBrand8 from "assets/images/dc39896fccab08f551ba6.jpg";
+
 import ImgProduct from "assets/images/section-3-img.png";
 
 import ImgCustomer1 from "assets/images/customer-1.png";
@@ -17,7 +28,7 @@ import ImgCustomer3 from "assets/images/customer-3.png";
 
 import ImgSection41 from "assets/images/chất lượng và dịch vụ hoàn hảo.jpg";
 import ImgSection42 from "assets/images/dịch vụ trước bán tận tình.jpg";
-import ImgSection43 from "assets/images/giao hàng nhanh chóng.jpg";
+import ImgSection43 from "assets/images/Giao hàng nhanh chóng.jpg";
 
 import ImgSection3 from "assets/images/section3-bg.jpg";
 
@@ -60,6 +71,8 @@ const Home = () => {
       left: 0,
       behavior: "smooth",
     });
+    window.addEventListener("scroll", handleScroll, true);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -69,6 +82,7 @@ const Home = () => {
   useEffect(() => {
     const height = document.querySelectorAll(".section-4-left-item")[0]
       .offsetHeight;
+    console.log("first", height);
     document.querySelector(".section-4-left").addEventListener(
       "scroll",
       (event) => {
@@ -79,12 +93,12 @@ const Home = () => {
           setSlide(0);
         } else if (
           document.querySelector(".section-4-left").scrollTop >= height - 100 &&
-          document.querySelector(".section-4-left").scrollTop < height + 100
+          document.querySelector(".section-4-left").scrollTop < 2 * height
         ) {
           setSlide(1);
         } else if (
           document.querySelector(".section-4-left").scrollTop >=
-          height + 100
+          2 * height
         ) {
           setSlide(2);
         }
@@ -93,12 +107,6 @@ const Home = () => {
     );
   }, [slide]);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, true);
-
-    // Remove the event listener
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
     <HomeWrapper>
       <div className="home-content" id="home-content">
@@ -122,7 +130,15 @@ const Home = () => {
                   </p>
                 </div>
                 <div>
-                  <img src={ImgBrand1} alt="" />
+                  <div>
+                    <img src={ImgLogoBW} alt="" />
+                    <div>
+                      <img src={ImgBrand1} alt="" />
+                      <img src={ImgBrand2} alt="" />
+                      <img src={ImgBrand3} alt="" />
+                      <img src={ImgBrand4} alt="" />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="info-product-item">
@@ -140,7 +156,14 @@ const Home = () => {
                   </p>
                 </div>
                 <div>
-                  <img src={ImgBrand2} alt="" />
+                  <div>
+                    <div>
+                      <img src={ImgBrand5} alt="" />
+                      <img src={ImgBrand6} alt="" />
+                      <img src={ImgBrand7} alt="" />
+                      <img src={ImgBrand8} alt="" />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="info-product-item">
@@ -158,7 +181,7 @@ const Home = () => {
                   </p>
                 </div>
                 <div>
-                  <img src={ImgBrand3} alt="" />
+                  <img src={ImgLogoBW} alt="" />
                 </div>
               </div>
             </div>
@@ -191,6 +214,7 @@ const Home = () => {
                   <p>{t("buy on")} Shopee</p>
                 </a>
               </div>
+
               <div className="section-4-left">
                 <div className="section-4-left-item">
                   <img src={ImgBestOffer} alt="" />
@@ -226,6 +250,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+
               <div className="section-4-right">
                 <img src={PhoneImg} alt="" />
                 <div>
@@ -323,14 +348,16 @@ const Home = () => {
                 <img src={ImgCustomer1} alt="" />
                 <p>
                   <span>NGUYỄN XUÂN PHÚ</span>
-                  <span>Mieu Mon, HN</span>
+                  <span>
+                    {t("General Director of AN PHU Plastic Factory, INVETOR")}
+                  </span>
                 </p>
               </div>
               <div>
                 <img src={DauNhay} alt="" />
                 <p>
                   {t(
-                    "General Director of AN PHU Plastic Factory, INVESTOR Enthusiastic consultation, providing optimal solutions to save costs, respond quickly"
+                    "Enthusiastic consultation, providing optimal solutions to save costs, respond quickly"
                   )}
                 </p>
                 <img src={DauNhay} alt="" />
@@ -341,14 +368,18 @@ const Home = () => {
                 <img src={ImgCustomer2} alt="" />
                 <p>
                   <span>ĐẶNG TÙNG NAM</span>
-                  <span>Mieu Mon, HN</span>
+                  <span>
+                    {t(
+                      "HITEKI VIETNAM JOINT STOCK COMPANY MECHANICAL ELECTRICAL CONTRACTOR"
+                    )}
+                  </span>
                 </p>
               </div>
               <div>
                 <img src={DauNhay} alt="" />
                 <p>
                   {t(
-                    "HITEKI VIETNAM JOINT STOCK COMPANY MECHANICAL ELECTRICAL CONTRACTOR Very satisfied with the mechanism as well as sales, enthusiastic and professional technical team, quick quotation, very good after-sales support"
+                    "Very satisfied with the mechanism as well as sales, enthusiastic and professional technical team, quick quotation, very good after-sales support"
                   )}
                 </p>
                 <img src={DauNhay} alt="" />
@@ -359,14 +390,14 @@ const Home = () => {
                 <img src={ImgCustomer3} alt="" />
                 <p>
                   <span>Hiếu</span>
-                  <span>Mieu Mon, HN</span>
+                  <span>{t("Commander")}</span>
                 </p>
               </div>
               <div>
                 <img src={DauNhay} alt="" />
                 <p>
                   {t(
-                    "Commander Really trust TRIANGLE TECH, delivery on time, quality as committed, especially enthusiastic support, generally satisfied"
+                    "Really trust TRIANGLE TECH, delivery on time, quality as committed, especially enthusiastic support, generally satisfied"
                   )}
                 </p>
                 <img src={DauNhay} alt="" />

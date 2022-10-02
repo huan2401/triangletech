@@ -13,7 +13,6 @@ const SwitchLangButton = ({ style }) => {
   useEffect(() => {
     setLang(getCurrentLanguage());
   }, []);
-  console.log("lang", lang);
   return (
     <SwitchLangButtonWrapper>
       <div className="switch-lang">

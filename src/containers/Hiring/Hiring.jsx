@@ -1,7 +1,7 @@
 import Nav from "components/common/Nav/Nav";
 import React, { useEffect } from "react";
 import { HiringWrapper } from "./CustomStyled";
-import BannerBg from "assets/images/banner.jpg";
+import BannerBg from "assets/images/banner-v2.jpg";
 import Item from "assets/images/section3-bg.jpg";
 // import Item from "assets/images/hiring-about-us.webp";
 import Footer from "components/Layout/Footer/Footer";

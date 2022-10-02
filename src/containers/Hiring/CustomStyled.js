@@ -47,7 +47,12 @@ export const HiringWrapper = styled.div`
         padding: 5px 10px;
         color: blue;
         /* background-color: #fff; */
-        background-color: blue;
+        background-color: #fff;
+        color: #fff;
+
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #0066ff;
 
         background-clip: text;
         -webkit-background-clip: text;
