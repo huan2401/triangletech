@@ -36,13 +36,13 @@ const Banner = ({ showNav }) => {
         <div className="banner-content-msg">
           <p>
             <span>{t("going to perfect")}</span> <br />
-            <span>
+            {/* <span>
               "
               {t(
                 "Bringing ELECTRICAL CONTROL and cable tray ladders with the best quality - the best service - The most suitable price to your project"
               )}
               "
-            </span>
+            </span> */}
           </p>
         </div>
         <div className="banner-content-link">

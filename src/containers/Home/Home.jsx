@@ -326,14 +326,20 @@ const Home = () => {
                 </div>
               </div>
               <div className="section-4-mobile-button">
-                <div>
+                <a
+                  href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
+                  target={"_blank"}
+                >
                   <img src={ZaloImg} alt="" />
                   <p>{t("buy on")} Zalo</p>
-                </div>
-                <div>
+                </a>
+                <a
+                  href="https://shopee.vn/tudiencongnghiep_triangletech?smtt=0.12157734-1663428015.12"
+                  target={"_blank"}
+                >
                   <img src={ImgShopee} alt="" />
                   <p>{t("buy on")} Shopee</p>
-                </div>
+                </a>
               </div>
             </section>
           )}

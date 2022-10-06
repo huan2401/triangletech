@@ -3,11 +3,15 @@ import React, { useEffect } from "react";
 import { HiringWrapper } from "./CustomStyled";
 import BannerBg from "assets/images/banner-v2.jpg";
 import Item from "assets/images/section3-bg.jpg";
-// import Item from "assets/images/hiring-about-us.webp";
+import Img_BusinessMan from "assets/images/nhân viên kinh doanh.jpg";
+import Img_Mechanical from "assets/images/Nhân viên lắp ráp.jpg";
 import Footer from "components/Layout/Footer/Footer";
 import { Link } from "react-router-dom";
 import { t } from "i18next";
 import IconCallPhone from "components/common/IconCallPhone/IconCallPhone";
+import Pdf_BusinessMan from "assets/pdf/tuyen dung kinh doanh.pdf";
+import Pdf_Mechanical from "assets/pdf/tuyen dung ky su thiêt ke co khi.pdf";
+import Pdf_Electrical from "assets/pdf/tuyen dung ky su dien (2).pdf";
 
 const Hiring = () => {
   useEffect(() => {
@@ -38,9 +42,13 @@ const Hiring = () => {
       <div className="hiring-content" id="list-job">
         <p>{t("List of job vacancies")}</p>
         <div className="hiring-content-list">
-          <Link to="/" className="hiring-content-item">
+          <a
+            href={Pdf_BusinessMan}
+            target={"_blank"}
+            className="hiring-content-item"
+          >
             <div>
-              <img src={Item} alt="" />
+              <img src={Img_BusinessMan} alt="" />
             </div>
             <div>
               <p>{t("Business man")}</p>
@@ -50,10 +58,14 @@ const Hiring = () => {
                 )}
               </p>
             </div>
-          </Link>
-          <Link to="/" className="hiring-content-item">
+          </a>
+          <a
+            href={Pdf_Mechanical}
+            target={"_blank"}
+            className="hiring-content-item"
+          >
             <div>
-              <img src={Item} alt="" />
+              <img src={Img_Mechanical} alt="" />
             </div>
             <div>
               <p>{t("Mechanical design engineer")}</p>
@@ -63,8 +75,12 @@ const Hiring = () => {
                 )}
               </p>
             </div>
-          </Link>
-          <Link to="/" className="hiring-content-item">
+          </a>
+          <a
+            href={Pdf_Electrical}
+            target={"_blank"}
+            className="hiring-content-item"
+          >
             <div>
               <img src={Item} alt="" />
             </div>
@@ -72,10 +88,10 @@ const Hiring = () => {
               <p>{t("Electrical Engineer")}</p>
               <p>{t("Electrical Engineer")}</p>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
-      <IconCallPhone/>
+      <IconCallPhone />
       <Footer />
     </HiringWrapper>
   );

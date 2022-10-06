@@ -97,7 +97,7 @@ export const BannerWrapper = styled.div`
         background-color: #fff;
         font-weight: bold;
         text-align: center;
-        width: 100%;
+        width: 60%;
 
         -webkit-text-fill-color: white;
         -webkit-text-stroke-width: 1px;
@@ -108,6 +108,9 @@ export const BannerWrapper = styled.div`
         -webkit-text-fill-color: transparent;
         backdrop-filter: blur(10px);
 
+        @media only screen and (max-width: 576px) {
+          width: 100%;
+        }
         & > span:first-child {
           font-size: 50px;
           color: blue;
@@ -117,13 +120,13 @@ export const BannerWrapper = styled.div`
           }
         }
 
-        & > span:last-child {
+        /* & > span:last-child {
           font-size: 20px;
           color: blue;
           @media only screen and (max-width: 576px) {
             font-size: 16px;
           }
-        }
+        } */
       }
     }
 

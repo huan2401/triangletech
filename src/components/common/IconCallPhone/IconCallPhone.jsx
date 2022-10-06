@@ -1,5 +1,5 @@
 import React from "react";
-import IconZalo from "assets/images/icon-zalo.webp";
+import IconZalo from "assets/images/zalo-1.png";
 import IconPhone from "assets/images/phone-call-icon.png";
 import { IconCallPhoneWrapper } from "./CustomStyled";
 import { useState } from "react";
@@ -56,7 +56,7 @@ const IconCallPhone = () => {
 
       <a
         className="zalo-call"
-        href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
+        href="https://zalo.me/605827821545658699"
         target={"_blank"}
       >
         <img src={IconZalo} width="50" alt="Call Now" title="Call Now" />

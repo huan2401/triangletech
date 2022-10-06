@@ -248,7 +248,7 @@ export const HomeWrapper = styled.div`
       div.section-4-left-button {
         position: absolute;
         z-index: 20;
-        bottom: 40px;
+        bottom: -20px;
         left: 200px;
         justify-content: center;
         display: flex;
@@ -314,6 +314,7 @@ export const HomeWrapper = styled.div`
           width: 50%;
 
           height: 100%;
+          min-height: 100%;
 
           & > img {
             width: 110px;
@@ -441,7 +442,7 @@ export const HomeWrapper = styled.div`
         flex-direction: column;
         gap: 20px;
 
-        & > div {
+        & > a {
           display: inline-flex;
           align-items: center;
           gap: 20px;
