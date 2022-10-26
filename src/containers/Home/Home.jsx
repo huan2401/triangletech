@@ -28,7 +28,7 @@ import ImgCustomer3 from "assets/images/customer-3.png";
 
 import ImgSection41 from "assets/images/chất lượng và dịch vụ hoàn hảo.jpg";
 import ImgSection42 from "assets/images/dịch vụ trước bán tận tình.jpg";
-import ImgSection43 from "assets/images/Giao hàng nhanh chóng.jpg";
+import ImgSection43 from "assets/images/giao hàng nhanh chóng.jpg";
 
 import ImgSection3 from "assets/images/section3-bg.jpg";
 

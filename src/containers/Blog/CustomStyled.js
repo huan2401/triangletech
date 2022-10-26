@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InfoWrapper = styled.div`
+export const BlogWrapper = styled.div`
   width: 100%;
 
   .blog-banner {
@@ -56,10 +56,12 @@ export const InfoWrapper = styled.div`
 
         & > div:first-child {
           width: 100%;
+          height: 300px;
 
           & > img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
           }
         }
         & > div:last-child {
@@ -68,13 +70,15 @@ export const InfoWrapper = styled.div`
           & > p:first-child {
             color: #465059;
             font-size: 24px;
-            line-height: 32px;
+            line-height: 1.5;
             -webkit-line-clamp: 2;
             line-clamp: 2;
             overflow: hidden;
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
-            min-height: 64px;
+            line-height: 1.5;
+            display: -webkit-box;
+            min-height: calc(24px * 1.5 * 2);
 
             &:hover {
               color: #0795ff;
@@ -93,7 +97,7 @@ export const InfoWrapper = styled.div`
             }
             & > p:last-child {
               font-size: 16px;
-              line-height: 150%;
+              line-height: 1.5;
               color: #646b72;
               display: -webkit-box;
               -webkit-line-clamp: 3;
@@ -102,6 +106,7 @@ export const InfoWrapper = styled.div`
               -webkit-box-orient: vertical;
               text-overflow: ellipsis;
               letter-spacing: 1px;
+              min-height: calc(16px * 1.5 * 3);
             }
           }
         }

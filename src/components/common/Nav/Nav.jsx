@@ -38,12 +38,12 @@ const Nav = ({ collapse }) => {
             >
               {t("we are hiring")}
             </Link>
-            {/* <Link
-              to="/info"
-              className={path.pathname === "/info" ? "nav-left-active" : ""}
+            <Link
+              to="/blog"
+              className={path.pathname === "/blog" ? "nav-left-active" : ""}
             >
-              {t("info")}
-            </Link> */}
+              {t("blog")}
+            </Link>
           </div>
         )}
       </div>
@@ -127,8 +127,8 @@ const Nav = ({ collapse }) => {
                 <p>
                   {path.pathname === "/hiring"
                     ? t("hiring")
-                    // : path.pathname === "/info"
-                    // ? t("info")
+                    : path.pathname === "/blog"
+                    ? t("blog")
                     : t("home")}
                 </p>
                 <CaretDownOutlined />
@@ -145,7 +145,7 @@ const Nav = ({ collapse }) => {
             <CloseOutlined />
           </p>
           <Link to="/hiring">{t("we are hiring")}</Link>
-          {/* <Link to="/info">{t("info")}</Link> */}
+          <Link to="/blog">{t("blog")}</Link>
           <div className="fullScreen-lang">
             <p>{t("language")}</p>
             <div>
