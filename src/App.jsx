@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.less";
-import { useSelector, useDispatch } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "containers/Home/Home";
 import NotFound from "containers/NotFound/NotFound";
@@ -9,8 +8,6 @@ import Hiring from "containers/Hiring/Hiring";
 import BLog from "containers/Blog/Blog";
 
 function App() {
-  const dispatch = useDispatch();
-
   return (
     <>
       <Routes>
@@ -19,7 +16,6 @@ function App() {
         <Route path="hiring" element={<Hiring />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <Footer /> */}
     </>
   );
 }

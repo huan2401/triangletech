@@ -4,23 +4,10 @@ import App from "./App";
 import "./index.less";
 import reportWebVitals from "./reportWebVitals";
 import { I18nextProvider } from "react-i18next";
-import I18Provider from "providers/I18Provider";
-import i18n from "i18n";
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "store";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
-
-import { ToastContainer } from "react-toastify";
-import { injectStyle } from "react-toastify/dist/inject-style";
-import "react-toastify/dist/ReactToastify.css";
 import i18next from "i18next";
 import en from "assets/i18n/en.json";
 import vi from "assets/i18n/vi.json";
-if (typeof window !== "undefined") {
-  injectStyle();
-}
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -36,21 +23,10 @@ i18next.init({
   },
 });
 
-let persistor = persistStore(store);
-
 ReactDOM.render(
   <BrowserRouter>
     <I18nextProvider i18n={i18next}>
-      {/* <I18Provider> */}
-      <Provider store={store}>
-        {/* <PersistGate loading={null} persistor={persistor}> */}
-        {/* <Provider store={store}> */}
-        <App />
-        <ToastContainer />
-        {/* </Provider> */}
-        {/* </PersistGate> */}
-      </Provider>
-      {/* </I18Provider> */}
+      <App />
     </I18nextProvider>
   </BrowserRouter>,
   document.getElementById("root")

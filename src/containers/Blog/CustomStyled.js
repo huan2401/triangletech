@@ -26,7 +26,7 @@ export const BlogWrapper = styled.div`
   }
 
   .blog-content {
-    padding: 50px 200px;
+    padding: 50px 150px;
 
     @media only screen and (max-width: 576px) {
       padding: 40px 15px;
@@ -46,7 +46,8 @@ export const BlogWrapper = styled.div`
       }
 
       & > a.blog-content-item {
-        width: 30%;
+        /* width: 30%; */
+        width: 380px;
         display: block;
         margin-bottom: 20px;
 
