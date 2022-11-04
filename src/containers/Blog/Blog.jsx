@@ -68,21 +68,30 @@ const Blog = () => {
       behavior: "smooth",
     });
     setLoading(true);
-    getPostByPage(currentPage).then((res) => {
-      setPosts([...res.data]);
-      setLoading(false);
-    });
+    getPostByPage(currentPage)
+      .then((res) => {
+        setPosts([...res.data]);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setPosts([]);
+      });
   }, [currentPage]);
 
   useEffect(() => {
-    getAllCategory(1).then((res) => {
-      console.log("cate", res);
-      const temp = res.data.map((item) => item.name);
-      temp.unshift("All");
-      const arr = unique(temp);
-      setCategories(arr);
-      console.log();
-    });
+    getAllCategory(1)
+      .then((res) => {
+        console.log("cate", res);
+        const temp = res.data.map((item) => item.name);
+        temp.unshift("All");
+        const arr = unique(temp);
+        setCategories(arr);
+        console.log();
+      })
+      .catch((err) => {
+        setCategories([]);
+      });
   }, []);
 
   const handleChange = (tag, checked) => {

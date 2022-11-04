@@ -5,13 +5,19 @@ import BannerBg from "assets/images/banner-v2.jpg";
 import Item from "assets/images/section3-bg.jpg";
 import Img_BusinessMan from "assets/images/nhân viên kinh doanh.jpg";
 import Img_Mechanical from "assets/images/Nhân viên lắp ráp.jpg";
+import Img_Electrical from "assets/images/tuyển dụng kỹ sư điện.jfif";
+import Img_machineOperator from "assets/images/tuyển dụng nhân viên vận hành máy CNC.jpg";
+import Img_internalAccounting from "assets/images/tuyển dụng kế toán nội bộ.png";
+import Img_mechanicalDesignEngineer from "assets/images/tuyển dụng kỹ sư thiết kế cơ khí.jfif";
 import Footer from "components/Layout/Footer/Footer";
-import { Link } from "react-router-dom";
 import { t } from "i18next";
 import IconCallPhone from "components/common/IconCallPhone/IconCallPhone";
 import Pdf_BusinessMan from "assets/pdf/tuyen dung kinh doanh.pdf";
 import Pdf_Mechanical from "assets/pdf/tuyen dung ky su thiêt ke co khi.pdf";
 import Pdf_Electrical from "assets/pdf/tuyen dung ky su dien (2).pdf";
+import Pdf_machineOperator from "assets/pdf/tuyen dung nhan vien vận hành máy CNC.pdf";
+import Pdf_internalAccounting from "assets/pdf/tuyen dung ke toan noi bo.pdf";
+import Pdf_mechanicalDesignEngineer from "assets/pdf/tuyen dung ky su thiêt ke co khi.pdf";
 
 const Hiring = () => {
   useEffect(() => {
@@ -82,11 +88,63 @@ const Hiring = () => {
             className="hiring-content-item"
           >
             <div>
-              <img src={Item} alt="" />
+              <img src={Img_Electrical} alt="" />
             </div>
             <div>
               <p>{t("Electrical Engineer")}</p>
               <p>{t("Electrical Engineer")}</p>
+            </div>
+          </a>
+
+          <a
+            href={Pdf_machineOperator}
+            target={"_blank"}
+            className="hiring-content-item"
+          >
+            <div>
+              <img src={Img_machineOperator} alt="" />
+            </div>
+            <div>
+              <p>{t("machine operator")}</p>
+              <p>
+                {t(
+                  "Separation of mechanical materials (corrugated iron, copper ...)"
+                )}
+              </p>
+            </div>
+          </a>
+          <a
+            href={Pdf_internalAccounting}
+            target={"_blank"}
+            className="hiring-content-item"
+          >
+            <div>
+              <img src={Img_internalAccounting} alt="" />
+            </div>
+            <div>
+              <p>{t("internal accounting")}</p>
+              <p>
+                {t(
+                  "Record entries related to cash receipts and payments and deposits. Timely reporting of cash receipts and payments."
+                )}
+              </p>
+            </div>
+          </a>
+          <a
+            href={Pdf_mechanicalDesignEngineer}
+            target={"_blank"}
+            className="hiring-content-item"
+          >
+            <div>
+              <img src={Img_mechanicalDesignEngineer} alt="" />
+            </div>
+            <div>
+              <p>{t("mechanical design engineer")}</p>
+              <p>
+                {t(
+                  "Planning the design of assembly drawings according to customer requirements"
+                )}
+              </p>
             </div>
           </a>
         </div>

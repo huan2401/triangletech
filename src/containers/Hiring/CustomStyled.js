@@ -113,6 +113,7 @@ export const HiringWrapper = styled.div`
       align-items: center;
       width: 100%;
       gap: 3%;
+      flex-wrap: wrap;
 
       @media only screen and (max-width: 576px) {
         flex-direction: column;
@@ -121,6 +122,8 @@ export const HiringWrapper = styled.div`
       & > a.hiring-content-item {
         flex: 1;
         display: block;
+        min-width: 30%;
+        margin-top: 20px;
 
         @media only screen and (max-width: 576px) {
           width: 100%;

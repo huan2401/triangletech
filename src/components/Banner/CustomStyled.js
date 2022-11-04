@@ -58,9 +58,13 @@ export const BannerWrapper = styled.div`
           }
 
           & > img {
-            width: 40px;
-            height: 40px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
+            @media only screen and (max-width: 576px) {
+              width: 60px;
+              height: 60px;
+            }
           }
         }
 
@@ -131,7 +135,7 @@ export const BannerWrapper = styled.div`
     }
 
     & > div.banner-content-link {
-      margin-top: 30px;
+      margin-top: 50vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -139,7 +143,7 @@ export const BannerWrapper = styled.div`
       gap: 30px;
 
       @media only screen and (max-width: 576px) {
-        margin-top: 55px;
+        /* margin-top: 55px; */
       }
 
       & > div {

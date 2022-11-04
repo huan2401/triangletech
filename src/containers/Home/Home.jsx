@@ -353,7 +353,7 @@ const Home = () => {
               <div>
                 <img src={ImgCustomer1} alt="" />
                 <p>
-                  <span>NGUYỄN XUÂN PHÚ</span>
+                  <span>{`${t("mr")} NGUYỄN XUÂN PHÚ`}</span>
                   <span>
                     {t("General Director of AN PHU Plastic Factory, INVETOR")}
                   </span>
@@ -373,7 +373,7 @@ const Home = () => {
               <div>
                 <img src={ImgCustomer2} alt="" />
                 <p>
-                  <span>ĐẶNG TÙNG NAM</span>
+                  <span>{`${t("mr")} ĐẶNG TÙNG NAM`}</span>
                   <span>
                     {t(
                       "HITEKI VIETNAM JOINT STOCK COMPANY MECHANICAL ELECTRICAL CONTRACTOR"
@@ -395,7 +395,7 @@ const Home = () => {
               <div>
                 <img src={ImgCustomer3} alt="" />
                 <p>
-                  <span>Hiếu</span>
+                  <span>{`${t("mr")} Hiếu`}</span>
                   <span>{t("Commander")}</span>
                 </p>
               </div>

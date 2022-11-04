@@ -109,7 +109,6 @@ export const NavWrapper = styled.div`
       & > div {
         display: flex;
         align-items: center;
-        gap: 10px;
         cursor: pointer;
 
         & > a {
@@ -117,14 +116,18 @@ export const NavWrapper = styled.div`
           white-space: nowrap;
           color: #000;
           font-weight: 600;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          & > img {
+            width: 25px;
+            height: 25px;
+          }
         }
         & > p {
           font-size: 16px;
           white-space: nowrap;
-        }
-        & > img {
-          width: 25px;
-          height: 25px;
         }
       }
     }
@@ -179,6 +182,18 @@ export const NavWrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 5px;
+
+        & > a {
+          padding: 5px;
+          & > img {
+            width: 25px;
+            height: 25px;
+          }
+        }
+
+        & > div {
+          padding: 10px;
+        }
       }
     }
   }

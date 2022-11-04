@@ -51,11 +51,11 @@ const Nav = ({ collapse }) => {
         <div className="nav-right">
           <div>
             <div>
-              <img src={ZaloImg} alt="" />
               <a
                 href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
                 target="_blank"
               >
+                <img src={ZaloImg} alt="" />
                 {t("zalo store")}
               </a>
             </div>
@@ -66,11 +66,11 @@ const Nav = ({ collapse }) => {
               }}
             />
             <div>
-              <img src={ImgShopee} alt="" />
               <a
                 href="https://shopee.vn/tudiencongnghiep_triangletech?smtt=0.12157734-1663428015.12"
                 target="_blank"
               >
+                <img src={ImgShopee} alt="" />
                 {t("shopee")}
               </a>
             </div>
@@ -122,16 +122,23 @@ const Nav = ({ collapse }) => {
             <div className="nav-right-mobile-2">
               <div
                 className="nav-right-mobile-2-home"
-                onClick={() => setShowNavHome(true)}
+                // onClick={() => setShowNavHome(true)}
               >
-                <p>
-                  {path.pathname === "/hiring"
-                    ? t("hiring")
-                    : path.pathname === "/blog"
-                    ? t("blog")
-                    : t("home")}
-                </p>
-                <CaretDownOutlined />
+                <a
+                  href="https://zalo.me/app/link/zapps/2589573568261763553/ministore/?id=605827821545658699"
+                  target="_blank"
+                >
+                  <img src={ZaloImg} alt="" />
+                </a>
+                <a
+                  href="https://shopee.vn/tudiencongnghiep_triangletech?smtt=0.12157734-1663428015.12"
+                  target="_blank"
+                >
+                  <img src={ImgShopee} alt="" />
+                </a>
+                <div onClick={() => setShowNavHome(true)}>
+                  <CaretDownOutlined />
+                </div>
               </div>
             </div>
           )}

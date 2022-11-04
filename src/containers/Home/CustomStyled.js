@@ -436,7 +436,7 @@ export const HomeWrapper = styled.div`
 
       &-button {
         position: relative;
-        z-index: 20;
+        /* z-index: 20; */
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -520,8 +520,7 @@ export const HomeWrapper = styled.div`
           display: flex;
           flex-direction: column;
           flex: 1;
-          width: 300px;
-          /* min-width: calc(34%); */
+          min-width: 360px;
 
           @media only screen and (max-width: 576px) {
             width: 100%;

@@ -25,32 +25,25 @@ const Banner = ({ showNav }) => {
           <div className="banner-content-header-logo">
             <div>
               <img src={Logo} alt="" />
-              <p>Triangletech</p>
+              {/* <p>Triangletech</p> */}
             </div>
-            {!isMobile && <p>{t("hotline")} : 0926095888</p>}
+            {/* {!isMobile && <p>{t("hotline")} : 0926095888</p>} */}
           </div>
           <div className="banner-content-header-lang">
             <SwitchLangButton />
           </div>
         </div>
-        <div className="banner-content-msg">
+        {/* <div className="banner-content-msg">
           <p>
             <span>{t("going to perfect")}</span> <br />
-            {/* <span>
-              "
-              {t(
-                "Bringing ELECTRICAL CONTROL and cable tray ladders with the best quality - the best service - The most suitable price to your project"
-              )}
-              "
-            </span> */}
           </p>
-        </div>
+        </div> */}
         <div className="banner-content-link">
           {!isMobile && <p>{t("Exciting offers on")}</p>}
           <Nav collapse={showNav} />
         </div>
       </div>
-      <IconCallPhone/>
+      <IconCallPhone />
     </BannerWrapper>
   );
 };
