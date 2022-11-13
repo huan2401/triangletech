@@ -8,25 +8,16 @@ import { Button, Pagination, Tag } from "antd";
 import axios from "axios";
 import { formatDate, getHour } from "utils/formatDate";
 import Loading from "components/common/Loading/Loading";
-import CheckableTag from "antd/lib/tag/CheckableTag";
-import { unique } from "utils/unique";
-
-const tagsData = [
-  "All",
-  "Design",
-  "Lifestyle",
-  "Travel Tips",
-  "Healthy",
-  "Hotel",
-];
+import Category from "components/common/Category/Category";
+import { t } from "i18next";
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [posts, setPosts] = useState([]);
   const [lastPage, setLastPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [selectedTags, setSelectedTags] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [selectedCategorySlug, setSelectedCategorySlug] = useState("All");
 
   const handleChangePage = (page, pageSize) => {
     setCurrentPage(page);
@@ -37,9 +28,24 @@ const Blog = () => {
       params: { page },
     });
     const lastLink = res.data.links.last;
-    console.log("first", res);
     setLastPage(Number(lastLink.split("=")[1]));
+    console.log("get all post", res.data);
+
     return res.data;
+  };
+
+  const getPostByCategory = async (slug) => {
+    if (slug !== "All") {
+      const res = await axios.get(
+        `https://demo-cms.cetera.one/api/v1/category/${slug}`
+      );
+      console.log("getPostByCategory", res);
+      return res.data;
+    }
+  };
+
+  const handleSelectedCategory = (categorySlug) => {
+    setSelectedCategorySlug(categorySlug === "All" ? "All" : categorySlug);
   };
 
   const getAllCategory = async (page) => {
@@ -49,7 +55,6 @@ const Blog = () => {
         params: { page },
       }
     );
-    const lastLink = res.data.links.last;
     return res.data;
   };
 
@@ -62,59 +67,45 @@ const Blog = () => {
   }, []);
 
   useEffect(() => {
+    if (selectedCategorySlug !== "All") {
+      setLoading(true);
+      getPostByCategory(selectedCategorySlug).then((res) => {
+        console.log("post by slug", res.data.posts);
+        setPosts(res.data.posts.data);
+        setLoading(false);
+      });
+    }
+  }, [selectedCategorySlug]);
+
+  useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
     setLoading(true);
-    getPostByPage(currentPage)
-      .then((res) => {
-        setPosts([...res.data]);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setPosts([]);
-      });
-  }, [currentPage]);
+    if (selectedCategorySlug === "All") {
+      getPostByPage(currentPage)
+        .then((res) => {
+          setPosts([...res.data]);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(false);
+          setPosts([]);
+        });
+    }
+  }, [currentPage, selectedCategorySlug]);
 
   useEffect(() => {
     getAllCategory(1)
       .then((res) => {
-        console.log("cate", res);
-        const temp = res.data.map((item) => item.name);
-        temp.unshift("All");
-        const arr = unique(temp);
-        setCategories(arr);
-        console.log();
+        setCategories(res.data);
       })
       .catch((err) => {
         setCategories([]);
       });
   }, []);
-
-  const handleChange = (tag, checked) => {
-    console.log("tag", tag, checked);
-    let nextSelectedTags;
-    if (tag === "All") {
-      if (checked) {
-        nextSelectedTags = categories;
-        setSelectedTags(nextSelectedTags);
-      } else {
-        nextSelectedTags = [];
-        setSelectedTags(nextSelectedTags);
-      }
-      return;
-    }
-    nextSelectedTags = checked
-      ? [...selectedTags, tag]
-      : selectedTags.filter((t) => t !== tag);
-    console.log("You are interested in: ", nextSelectedTags);
-    setSelectedTags(nextSelectedTags);
-  };
-  console.log("Selected tags", selectedTags);
-  console.log("categories", categories);
 
   return (
     <BlogWrapper>
@@ -125,23 +116,17 @@ const Blog = () => {
         </div>
       </div>
       <div className="blog-content">
-        <div>
+        <div className="blog-content-category">
           <span
             style={{
               marginRight: 8,
+              fontSize: 16,
+              whiteSpace: "nowrap"
             }}
           >
-            Categories:
+            {t("category")} :
           </span>
-          {categories.map((tag, index) => (
-            <CheckableTag
-              key={index}
-              checked={selectedTags.indexOf(tag) > -1}
-              onChange={(checked) => handleChange(tag, checked)}
-            >
-              {tag}
-            </CheckableTag>
-          ))}
+          <Category categories={categories} selected={handleSelectedCategory} />
         </div>
         <div className="blog-content-list">
           {loading ? (
@@ -149,14 +134,18 @@ const Blog = () => {
           ) : (
             posts.map((post, index) => {
               return (
-                <Link to="/" className="blog-content-item" key={index}>
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="blog-content-item"
+                  key={index}
+                >
                   <div>
                     <img src={post.image} alt="" />
                   </div>
                   <div>
                     <p>{post.name}</p>
                     <div>
-                      <p>{`${getHour(Date.now())} , ${formatDate(
+                      <p>{`${getHour(post.created_at)} , ${formatDate(
                         post.created_at
                       )}`}</p>
                       <p>{post.description}</p>
@@ -168,12 +157,14 @@ const Blog = () => {
           )}
         </div>
         <div>
-          <Pagination
-            simple
-            defaultCurrent={1}
-            total={lastPage * 10}
-            onChange={handleChangePage}
-          />
+          {selectedCategorySlug === "All" && (
+            <Pagination
+              simple
+              defaultCurrent={1}
+              total={lastPage * 10}
+              onChange={handleChangePage}
+            />
+          )}
         </div>
       </div>
       <Footer />

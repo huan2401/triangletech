@@ -32,13 +32,26 @@ export const BlogWrapper = styled.div`
       padding: 40px 15px;
     }
 
+    &-category {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     & > div.blog-content-list {
       margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
       width: 100%;
       gap: 3%;
+
+      /* display: flex;
+      flex-wrap: wrap;
+      align-items: center; */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      @media only screen and (max-width: 576px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
 
       @media only screen and (max-width: 576px) {
         flex-direction: column;
@@ -47,7 +60,7 @@ export const BlogWrapper = styled.div`
 
       & > a.blog-content-item {
         /* width: 30%; */
-        width: 380px;
+        /* width: 380px; */
         display: block;
         margin-bottom: 20px;
 
@@ -89,7 +102,7 @@ export const BlogWrapper = styled.div`
             margin-top: 10px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 6px;
             & > p:first-child {
               color: #a3aab1;
               font-size: 14px;
