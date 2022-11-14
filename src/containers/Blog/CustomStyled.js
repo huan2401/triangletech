@@ -27,6 +27,9 @@ export const BlogWrapper = styled.div`
 
   .blog-content {
     padding: 50px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
     @media only screen and (max-width: 576px) {
       padding: 40px 15px;
@@ -36,17 +39,24 @@ export const BlogWrapper = styled.div`
       display: flex;
       align-items: center;
       gap: 10px;
+
+      max-width: 900px;
+      width: 100%;
+      margin: auto;
     }
 
     & > div.blog-content-list {
       margin-top: 30px;
+      /* padding-bottom: 30px; */
       width: 100%;
-      gap: 3%;
+      max-width: 900px;
+      margin: auto;
 
       /* display: flex;
       flex-wrap: wrap;
       align-items: center; */
       display: grid;
+      grid-gap: 30px;
       grid-template-columns: repeat(3, 1fr);
 
       @media only screen and (max-width: 576px) {
@@ -70,7 +80,7 @@ export const BlogWrapper = styled.div`
 
         & > div:first-child {
           width: 100%;
-          height: 300px;
+          height: 200px;
 
           & > img {
             width: 100%;
@@ -81,7 +91,7 @@ export const BlogWrapper = styled.div`
         & > div:last-child {
           margin-top: 30px;
 
-          & > p:first-child {
+          & > p {
             color: #465059;
             font-size: 24px;
             line-height: 1.5;
@@ -92,7 +102,7 @@ export const BlogWrapper = styled.div`
             text-overflow: ellipsis;
             line-height: 1.5;
             display: -webkit-box;
-            min-height: calc(24px * 1.5 * 2);
+            /* min-height: calc(24px * 1.5 * 2); */
 
             &:hover {
               color: #0795ff;
@@ -109,7 +119,7 @@ export const BlogWrapper = styled.div`
               line-height: 17px;
               letter-spacing: 1px;
             }
-            & > p:last-child {
+            & > p.post-desc {
               font-size: 16px;
               line-height: 1.5;
               color: #646b72;
@@ -120,7 +130,12 @@ export const BlogWrapper = styled.div`
               -webkit-box-orient: vertical;
               text-overflow: ellipsis;
               letter-spacing: 1px;
-              min-height: calc(16px * 1.5 * 3);
+              /* min-height: calc(16px * 1.5 * 3); */
+            }
+            & > div.post-tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 4px;
             }
           }
         }
@@ -128,8 +143,10 @@ export const BlogWrapper = styled.div`
     }
 
     & > div:last-child {
-      margin-top: 30px;
+      /* margin-top: 30px; */
+      max-width: 900px;
       width: 100%;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: center;

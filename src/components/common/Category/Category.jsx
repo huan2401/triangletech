@@ -7,7 +7,16 @@ const Category = (props) => {
   const handleSelected = (category) => {
     setItemActive(category === "All" ? "All" : category.slug);
     props.selected(category === "All" ? "All" : category.slug);
+    localStorage.setItem(
+      "selectedCategorySlug",
+      JSON.stringify(category === "All" ? "All" : category.slug)
+    );
   };
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("selectedCategorySlug")) !== null)
+      setItemActive(JSON.parse(localStorage.getItem("selectedCategorySlug")));
+  }, [JSON.parse(localStorage.getItem("selectedCategorySlug"))]);
 
   return (
     <CategoryWrapper>

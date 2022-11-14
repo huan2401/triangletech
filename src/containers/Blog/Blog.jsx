@@ -10,6 +10,7 @@ import { formatDate, getHour } from "utils/formatDate";
 import Loading from "components/common/Loading/Loading";
 import Category from "components/common/Category/Category";
 import { t } from "i18next";
+import { useBreakpoints } from "hooks/useBreakpoint";
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,18 +20,19 @@ const Blog = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategorySlug, setSelectedCategorySlug] = useState("All");
 
+  const { isMobile } = useBreakpoints();
+
   const handleChangePage = (page, pageSize) => {
     setCurrentPage(page);
+    localStorage.setItem("currentPage", JSON.stringify(page));
   };
 
   const getPostByPage = async (page) => {
     const res = await axios.get("https://demo-cms.cetera.one/api/v1/posts", {
-      params: { page },
+      params: { page, per_page: 9 },
     });
     const lastLink = res.data.links.last;
     setLastPage(Number(lastLink.split("=")[1]));
-    console.log("get all post", res.data);
-
     return res.data;
   };
 
@@ -39,7 +41,6 @@ const Blog = () => {
       const res = await axios.get(
         `https://demo-cms.cetera.one/api/v1/category/${slug}`
       );
-      console.log("getPostByCategory", res);
       return res.data;
     }
   };
@@ -64,13 +65,13 @@ const Blog = () => {
       left: 0,
       behavior: "smooth",
     });
+    window.history.scrollRestoration = "manual";
   }, []);
 
   useEffect(() => {
     if (selectedCategorySlug !== "All") {
       setLoading(true);
       getPostByCategory(selectedCategorySlug).then((res) => {
-        console.log("post by slug", res.data.posts);
         setPosts(res.data.posts.data);
         setLoading(false);
       });
@@ -107,6 +108,18 @@ const Blog = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("currentPage")) !== null)
+      setCurrentPage(JSON.parse(localStorage.getItem("currentPage")));
+  }, [JSON.parse(localStorage.getItem("currentPage"))]);
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("selectedCategorySlug")) !== null)
+      setSelectedCategorySlug(
+        JSON.parse(localStorage.getItem("selectedCategorySlug"))
+      );
+  }, [JSON.parse(localStorage.getItem("selectedCategorySlug"))]);
+
   return (
     <BlogWrapper>
       <Nav collapse={true} />
@@ -117,15 +130,17 @@ const Blog = () => {
       </div>
       <div className="blog-content">
         <div className="blog-content-category">
-          <span
-            style={{
-              marginRight: 8,
-              fontSize: 16,
-              whiteSpace: "nowrap"
-            }}
-          >
-            {t("category")} :
-          </span>
+          {!isMobile && (
+            <span
+              style={{
+                marginRight: 8,
+                fontSize: 16,
+                whiteSpace: "nowrap",
+              }}
+            >
+              {t("category")} :
+            </span>
+          )}
           <Category categories={categories} selected={handleSelectedCategory} />
         </div>
         <div className="blog-content-list">
@@ -148,7 +163,16 @@ const Blog = () => {
                       <p>{`${getHour(post.created_at)} , ${formatDate(
                         post.created_at
                       )}`}</p>
-                      <p>{post.description}</p>
+                      <p className="post-desc">{post.description}</p>
+                      <div className="post-tags">
+                        {post.tags.map((tag, index) => {
+                          return (
+                            <Tag key={index} color="#108ee9">
+                              {tag.name}
+                            </Tag>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -160,7 +184,8 @@ const Blog = () => {
           {selectedCategorySlug === "All" && (
             <Pagination
               simple
-              defaultCurrent={1}
+              defaultCurrent={currentPage}
+              current={currentPage}
               total={lastPage * 10}
               onChange={handleChangePage}
             />

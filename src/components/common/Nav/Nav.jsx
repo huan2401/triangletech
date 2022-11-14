@@ -151,8 +151,12 @@ const Nav = ({ collapse }) => {
             <span>Close</span>
             <CloseOutlined />
           </p>
-          <Link to="/hiring">{t("we are hiring")}</Link>
-          <Link to="/blog">{t("blog")}</Link>
+          <Link to="/hiring" onClick={() => setShowNavHome(false)}>
+            {t("we are hiring")}
+          </Link>
+          <Link to="/blog" onClick={() => setShowNavHome(false)}>
+            {t("blog")}
+          </Link>
           <div className="fullScreen-lang">
             <p>{t("language")}</p>
             <div>

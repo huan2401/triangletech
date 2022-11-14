@@ -46,7 +46,6 @@ export const HiringWrapper = styled.div`
         font-size: 36px;
         padding: 5px 10px;
         color: blue;
-        /* background-color: #fff; */
         background-color: #fff;
         color: #fff;
 
@@ -153,13 +152,13 @@ export const HiringWrapper = styled.div`
           }
           & > p:last-child {
             font-size: 17px;
-            min-height: calc(17px * 3 * 1.3);
-            overflow: hidden;
-            line-height: 1.3;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
+            /* min-height: calc(17px * 3 * 1.3); */
             overflow: hidden;
             text-overflow: ellipsis;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
           }
         }
       }
