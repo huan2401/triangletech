@@ -55,6 +55,7 @@ export const BlogWrapper = styled.div`
       width: 100%;
       max-width: 900px;
       margin: auto;
+      position: relative;
 
       /* display: flex;
       flex-wrap: wrap;
@@ -146,11 +147,11 @@ export const BlogWrapper = styled.div`
       }
     }
 
-    & > div:last-child {
-      /* margin-top: 30px; */
+    & > div.blog-content-pagination {
+      margin-top: 50px;
       max-width: 900px;
       width: 100%;
-      margin: auto;
+      /* margin: auto; */
       display: flex;
       align-items: center;
       justify-content: center;

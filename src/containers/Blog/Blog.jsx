@@ -180,7 +180,7 @@ const Blog = () => {
             })
           )}
         </div>
-        <div>
+        <div className="blog-content-pagination">
           {selectedCategorySlug === "All" && (
             <Pagination
               simple
