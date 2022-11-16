@@ -169,14 +169,14 @@ export const HiringWrapper = styled.div`
             font-size: 20px;
             font-weight: 600;
 
+            min-height: calc(20px * 2 * 1.3);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             @media only screen and (max-width: 900px) {
-              min-height: calc(20px * 2 * 1.3);
-              overflow: hidden;
-              text-overflow: ellipsis;
-              line-height: 1.3;
-              display: -webkit-box;
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
             }
           }
           & > p:last-child {
