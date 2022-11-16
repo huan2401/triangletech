@@ -87,7 +87,7 @@ const BlogDetail = () => {
         <div className="blog-detail-back">
           <Link to="/blog">
             <LeftOutlined />
-            Tất cả bài viết
+            {t("All posts")}
           </Link>
         </div>
         <div className="blog-detail-content">
