@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const HiringWrapper = styled.div`
   width: 100%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+
   .hiring-banner {
     width: 100%;
     height: 498px;
@@ -91,7 +97,14 @@ export const HiringWrapper = styled.div`
   }
 
   .hiring-content {
-    padding: 50px 200px;
+    /* padding: 50px 200px; */
+    width: 900px;
+
+    @media only screen and (max-width: 1080px) {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 50px 50px;
+    }
 
     @media only screen and (max-width: 576px) {
       padding: 64px 15px 50px 15px;
@@ -111,7 +124,7 @@ export const HiringWrapper = styled.div`
       flex-wrap: wrap;
       align-items: center;
       width: 100%;
-      gap: 3%;
+      gap: 20px;
       flex-wrap: wrap;
 
       @media only screen and (max-width: 576px) {
@@ -120,9 +133,14 @@ export const HiringWrapper = styled.div`
       }
       & > a.hiring-content-item {
         flex: 1;
-        display: block;
         min-width: 30%;
-        margin-top: 20px;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        /* margin-top: 20px; */
 
         @media only screen and (max-width: 576px) {
           width: 100%;
@@ -131,6 +149,7 @@ export const HiringWrapper = styled.div`
         & > div:first-child {
           width: 100%;
           height: 250px;
+          min-height: 250px;
 
           & > img {
             width: 100%;
@@ -149,10 +168,20 @@ export const HiringWrapper = styled.div`
             font-weight: 400;
             font-size: 20px;
             font-weight: 600;
+
+            @media only screen and (max-width: 900px) {
+              min-height: calc(20px * 2 * 1.3);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              line-height: 1.3;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
           }
           & > p:last-child {
             font-size: 17px;
-            /* min-height: calc(17px * 3 * 1.3); */
+            min-height: calc(17px * 3 * 1.3);
             overflow: hidden;
             text-overflow: ellipsis;
             line-height: 1.3;

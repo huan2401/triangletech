@@ -31,6 +31,10 @@ export const BlogWrapper = styled.div`
     flex-direction: column;
     gap: 30px;
 
+    @media only screen and (max-width: 1080px) {
+      padding: 50px 50px;
+    }
+
     @media only screen and (max-width: 576px) {
       padding: 40px 15px;
     }
