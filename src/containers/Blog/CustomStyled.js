@@ -148,10 +148,10 @@ export const BlogWrapper = styled.div`
     }
 
     & > div.blog-content-pagination {
+      margin: auto;
       margin-top: 50px;
       max-width: 900px;
       width: 100%;
-      /* margin: auto; */
       display: flex;
       align-items: center;
       justify-content: center;
